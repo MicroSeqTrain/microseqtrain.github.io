@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Skesa</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css">
+</head>
+<body>
+<h1><center>Skesa</center></h1> 
+<div class="sidenav">
+  <p>GalaxyTrakr Basics</p>
+  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
+  <a href="https://microseqtrain.github.io/Paired_fastq_collection">Paired FASTQ Collection</a>
+  <a href="https://microseqtrain.github.io/Workflow_import">Workflow Import</a>
+  <p>Tool Tutorials</p>
+  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
+  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
+  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
+  <a href="https://microseqtrain.github.io/MLST">MLST</a>
+  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
+  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
+  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
+  <a href="https://microseqtrain.github.io/index">About Us</a>
+</div>
+<p><center>Skesa is a tool for creating an assembly from fastq or fasta files that have breaks in the repeat sections of the genome.</center></p>
+<button class="collapsible">Video Tutorial</button>
+<div class="content">
+	<p><i>Coming soon!</i></p>
+</div>
+<button class="collapsible">Text Walkthrough</button>
+<div class="content">
+	<p>For the purposes of this tutorial, it is assumed that the user has previously created a history, uploaded fastq or fasta files, and created a paired list of them in GalaxyTrakr. If you have not already done so and would 
+	like to learn more about those steps, please visit <a href="https://microseqtrain.github.io/fastq_import">this</a> tutorial for fastq import 
+	and <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial for creating a collection of fastq pairs.</p>
+	<p>Once you have your data in your history, search for <q>skesa</q> in the <q>search tools</q> bar and select the <q>skesa</q> tool. For the purposes of this tutorial, we will be using basic skesa, not SkesaMLST.</p>
+	<p>Skesa gives you the option of starting with single FASTQ or FASTA files, forward and reverse FASTQ files, and paired FASTQ files as your inputs.</p> 
+	<p>If your sequencing method outputs single fastq files, you may select the <q>Single FASTQ</q> option under the <q>Select Input</q> dropdown menu. This will enable the options of selecting a single dataset, multiple datasets, 
+	or a dataset collection.</p>
+	<p>If you have uploaded forward and reverse files for your samples but have not paired them, select the <q>Forward and Reverse FASTQ</q> option from the <q>Select Input</q> dropdown menu. You will then be able to input a single dataset,
+	multiple datasets, or a collection of datasets from the resulting dropdown menus. Ensure that you have a forward and a reverse file for each of your samples.</p>
+	<p>If you have created a collection of FASTQ pairs to use as your input, select this option from the <q>Select Input</q> dropdown menu. Then, select the name of the step in which you have created this collection under the menu 
+	that says <q>Paired FASTQ.</q></p>
+	<p>In this tutorial, we will only be covering the <q>Basic</q> options for skesa. Select that option from the Options Type dropdown menu. If you are using a large dataset, you may want to switch the <q>Email notification</q> toggle 
+	on so that you receive an email notification if you navigate away from the GalaxyTrakr page while working on other tasks.</p>
+	<p>When you are satisfied with your input and options selections, click <q>Execute.</q></p>
+	<p>After the tool completes, you will see the output in the History pane of the history in which you ran skesa. The output will be in fasta format and can be used in your future analyses by referencing their step in the 
+	history. The fasta output takes the form of a list where each item is individually downloadable by clicking on the hyperlink of the fasta file’s name and then on the floppy disk that appears.</p>
+
+</div>
+<button class="collapsible">References</button>
+<div class="content">
+	<p>Documentation for Skesa can be found <a href="https://github.com/ncbi/ngs-tools/tree/master/tools/skesa/">here</a> on the developer's GitHub page.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>AMRFinderPlus_db</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css">
+</head>
+<body>
+<h1><center>Amrfinderplus_db</center></h1> 
+<div class="sidenav">
+  <p>GalaxyTrakr Basics</p>
+  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
+  <a href="https://microseqtrain.github.io/Paired_fastq_collection">Paired FASTQ Collection</a>
+  <a href="https://microseqtrain.github.io/Workflow_import">Workflow Import</a>
+  <p>Tool Tutorials</p>
+  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
+  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
+  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
+  <a href="https://microseqtrain.github.io/MLST">MLST</a>
+  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
+  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
+  <a href="https://microseqtrain.github.io/index">About Us</a>
+</div>
+<p><center>Amrfinderplus_db is a tool for detecting genes for virulence factors and resistance to antibiotics, heat, acid, metal, and biocides in bacterial genomes.</center></p>
+<button class="collapsible">Video Tutorial</button>
+<div class="content"> 
+	<p><i>Coming soon!</i></p>
+</div>
+<button class="collapsible">Text Walkthrough</button>
+<div class="content">
+	<p>AMRFinderPlus can be used with FASTA files for nucleotides or proteins or both together, if you have a gff file that will facilitate this.</p>
+	</p>Once you have your data in your history, search for <q>amrfinderplus_db</q> in the “search tools” bar and select the <q>amrfinderplus_db</q> tool.</p> 
+	<p>For our purposes, most often, the input will be nucleotide FASTA files. Select this option and choose whether you are going to input a single FASTA file, a multiple FASTA files, or a collection of datasets.
+	<p>Choose the database you would like to use to detect genes of interest. Generally, you will choose the most recent database. An exception to this may be if you have used an older version of a database previously and would
+like to remain consistent with versioning.</p>
+<p>Other options that are available to you for adjusting the tool’s outputs are:
+<ul>
+	<li>Selecting an organism of interest to filter results</li>
+	<li>Selecting a threshold for alleles needed to determine presence of a gene</li>
+	<li>Minimum acceptable coverage of reference protein</li>
+	<li>Whether or not to add <q>plus</q> genes to the report. Toggle this to the on position if you would like to see resistance or virulence genes other than those for antibiotics</li>
+	<li>Suppress proteins common to a taxonomy group, if you have selected organism-specific results and would like to eliminate outputs common to the taxonomy group</li>
+	<li>Report all target positions of mutations</li>
+	<li>Only toggle the next step about format of protein identifiers if you have uploaded protein FASTA files as well as nucleotide</li>
+	<li>Whether or not you would like to receive an email notification when the tool has finished running.</li>
+</ul>
+<p>The output for this tool will be tables containing the resistance genes detected.</p>
+
+
+
+</div>
+<button class="collapsible">References</button>
+<div class="content">
+	<p>Documentation for Amrfinderplus_db can be found <a href="https://github.com/ncbi/amr/wiki">here</a> on the developer's GitHub page.</p>
+</div>
+
+</body>
+</html> 
