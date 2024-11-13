@@ -20,30 +20,52 @@
   <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
   <a href="https://microseqtrain.github.io/index">About Us</a>
 </div>
-<p><center>MLST is a tool that will run input genomes against PubMLST schemes and output the scheme most closely matching the input genome along with the alleles used to select the scheme.</center></p>
+<p><center>FastQC is a GalaxyTrakr tool that will take fastq, bam, or sam input and output data on the quality of that read.</center></p>
 <button class="collapsible">Video Tutorial</button>
 <div class="content"> 
 	<p><i>Coming soon!</i></p>
 </div>
 <button class="collapsible">Text Walkthrough</button>
 <div class="content">
-	<p>MLST can be used with FASTA files. If your sequences are not already assembled and you would like assistance in doing so, please see the <a href="https://microseqtrain.github.io/skesa">skesa</a> tutorial.</p>
-	<p>Once you have your data in your history, search for “MLST” in the “search tools” bar and select the “MLST” tool.</p> 
-	<p>Input either the multiple datasets containing your FASTA files or a collection of such files.</p> 
-	<p>If you do not desire to specify advanced parameters, click “Execute” to run the tool.</p>
-	<p>The output will be a tabular file that lists the filenames of your input files, the scheme found to match each input file, and the alleles used to match the scheme to the input.</p>
-
-
-
+	<p>For the purposes of this tutorial, it is assumed that the user has previously created a history, uploaded fastq or fasta files, and created a paired list of them in GalaxyTrakr. If you have not already done so and would 
+	like to learn more about those steps, please visit <a href="https://microseqtrain.github.io/fastq_import">this</a> tutorial for fastq import 
+	and <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial for creating a collection of fastq pairs.</p>
+	<p>While in the history where you  have placed your fastq files, search for <q>FastQC</q> in the Tools search bar in the left pane of the GalaxyTrakr main page. Select the matching tool.</p>
+	<p>GalaxyTrakr will attempt to autopopulate the list of files to run the tool on from the current history. Use the icons for single or multiple fastq files and the dropdowns to select your data sources. </p>
+	<p>For the purposes of foodborne illness surveillance, tuning the default options of the tool is not generally advisable. If you have questions about uses of contaminant lists or other options on the FastQC tool page,
+		please contact <a href="mailto:microseqtrain@fda.hhs.gov">us</a>.</p>
+	<p>If you would like an email notification when the tool completes working, toggle the <q>Email notification</q> switch.</p>
+	<p>Click <q>Execute</q> when you are satisfied with your choices to trigger the tool.</p>
+	<p>The outputs of the tool can be viewed at two levels:
+		<il>
+			<li>At the <b>raw data</b> level, the quality of each individual forward and reverse read in the browser (by clicking on the eye next to each read's name) or by downloading, by clicking on the name of
+		the read and then clicking on the <q>floppy disk</q> button that appears. This file will be in txt format.</li>
+			<li>Alternatively, a <b>webpage report containing visualizations</b> of the raw data can be found by clicking on <q>#:FastQC on stepname: Web page</q> and navagativing to the level of each individual read, clicking on
+			the read name, and clicking on the <q>eye</q> icon beside it. That web page will include the following:
+				<il>
+					<li>Basic Statistics</li>
+					<li>Per base sequence quality</li>
+					<li>Per sequence quality scores</li>
+					<li>Per base sequence content</li>
+					<li>Per base GC content</li>
+					<li>Per sequence GC content</li>
+					<li>Per base N content</li>
+					<li>Sequence Length Distribution</li>
+					<li>Sequence Duplication Levels</li>
+					<li>Overrepresented sequences</li>
+					<li>Kmer Content</li>
+				</il>
+			</li>
+		</il>
 
 </div>
 <button class="collapsible">Citations & References</button>
 <div class="content">
 	<p>Documentation for MLST can be found at these locations:</p>
 	<ul>
-		<li><a href="https://github.com/tseemann/mlst"> T, S. (2016). MLST: Scan contig files against PubMLST typing schemes.</a></li>
-		<li><a href="https://bio.tools/mlst">bio.tools</a></li>
-		<li><a href="https://openebench.bsc.es/tool/mlst">OpenEBench</a></li>
+		<li><a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"> Andrews, S. (n.d.). FastQC A Quality Control tool for High Throughput Sequence Data</a></li>
+		<li><a href="https://bio.tools/fastqc">bio.tools</a></li>
+		<li><a href="https://openebench.bsc.es/tool/fastqc">OpenEBench</a></li>
 </div>
 
 </body>
