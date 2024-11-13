@@ -24,6 +24,12 @@ p {
   box-sizing: border-box;
 }
 
+ul {
+  display: flex;
+  width: none;
+  white-space: nowrap;
+}
+
 /* Style the side navigation */
 .sidenav {
   height: 100%;
@@ -33,13 +39,13 @@ p {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #198CFF;
+  background-color: #72A0C1;
   overflow-x: hidden;
 }
 
 /* Side navigation links */
 .sidenav a {
-  color: #0059B3;
+  color: #003399;
   padding: 16px;
   text-decoration: none;
   display: block;
