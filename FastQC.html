@@ -11,6 +11,7 @@
   <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
   <a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a>
   <a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a>
+  <br>
   <p>Tool Tutorials</p>
   <a href="https://microseqtrain.github.io/skesa">Skesa</a>
   <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
@@ -18,6 +19,7 @@
   <a href="https://microseqtrain.github.io/MLST">MLST</a>
   <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
   <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
+  <br>
   <a href="https://microseqtrain.github.io/index">About Us</a>
 </div>
 <p><center>FastQC is a GalaxyTrakr tool that will take fastq, bam, or sam input and output data on the quality of that read.</center></p>
@@ -30,19 +32,20 @@
 	<p>For the purposes of this tutorial, it is assumed that the user has previously created a history, uploaded fastq or fasta files, and created a paired list of them in GalaxyTrakr. If you have not already done so and would 
 	like to learn more about those steps, please visit <a href="https://microseqtrain.github.io/fastq_import">this</a> tutorial for fastq import 
 	and <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial for creating a collection of fastq pairs.</p>
-	<p>While in the history where you  have placed your fastq files, search for <q>FastQC</q> in the Tools search bar in the left pane of the GalaxyTrakr main page. Select the matching tool.</p>
+	<ol>
+	<li>While in the history where you  have placed your fastq files, search for <q>FastQC</q> in the Tools search bar in the left pane of the GalaxyTrakr main page. Select the matching tool.</p>
 	<p>GalaxyTrakr will attempt to autopopulate the list of files to run the tool on from the current history. Use the icons for single or multiple fastq files and the dropdowns to select your data sources. </p>
 	<p>For the purposes of foodborne illness surveillance, tuning the default options of the tool is not generally advisable. If you have questions about uses of contaminant lists or other options on the FastQC tool page,
-		please contact <a href="mailto:microseqtrain@fda.hhs.gov">us</a>.</p>
-	<p>If you would like an email notification when the tool completes working, toggle the <q>Email notification</q> switch.</p>
-	<p>Click <q>Execute</q> when you are satisfied with your choices to trigger the tool.</p>
-	<p>The outputs of the tool can be viewed at two levels:
-		<il>
+		please contact <a href="mailto:microseqtrain@fda.hhs.gov">us</a>.</li>
+	<li>If you would like an email notification when the tool completes working, toggle the <q>Email notification</q> switch.</li>
+	<li>Click <q>Execute</q> when you are satisfied with your choices to trigger the tool.</li>
+	<li>The outputs of the tool can be viewed at two levels:
+		<ul>
 			<li>At the <b>raw data</b> level, the quality of each individual forward and reverse read in the browser (by clicking on the eye next to each read's name) or by downloading, by clicking on the name of
 		the read and then clicking on the <q>floppy disk</q> button that appears. This file will be in txt format.</li>
 			<li>Alternatively, a <b>webpage report containing visualizations</b> of the raw data can be found by clicking on <q>#:FastQC on stepname: Web page</q> and navagativing to the level of each individual read, clicking on
 			the read name, and clicking on the <q>eye</q> icon beside it. That web page will include the following:
-				<il>
+				<ul>
 					<li>Basic Statistics</li>
 					<li>Per base sequence quality</li>
 					<li>Per sequence quality scores</li>
@@ -54,9 +57,11 @@
 					<li>Sequence Duplication Levels</li>
 					<li>Overrepresented sequences</li>
 					<li>Kmer Content</li>
-				</il>
+				</ul>
 			</li>
-		</il>
+		</ul>
+		</li>
+		</ol>
 
 </div>
 <button class="collapsible">Citations & References</button>
