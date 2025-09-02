@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>GalaxyTrakr Basics: Importing and Saving a Pre-existing Workflow</title>
-<link rel="stylesheet" type="text/css" href="tutorial_stylesheet.css">
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | GalaxyTrakr Basics: Workflow Import</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
+
 <body>
-<h1><center>GalaxyTrakr Basics: Importing a Pre-existing Workflow</center></h1> 
-<div class="sidenav">
-  <p>GalaxyTrakr Basics</p>
-  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
-  <a href="https://microseqtrain.github.io/Paired_fastq_collection">Paired FASTQ Collection</a>
-  <a href="https://microseqtrain.github.io/Workflow_import">Workflow Import</a>
-  <p>Tool Tutorials</p>
-  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
-  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/MLST">MLST</a>
-  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
-  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/index">About Us</a>
-</div>
-<p><center>This tutorial will show you how access and import workflows and save pre-existing workflows into your workflows GalaxyTrakr.</center></p>
-<button class="collapsible">Video Tutorial</button>
-<div class="content">
-	<p><i>Coming soon!</i></p>
-</div>
-<button class="collapsible">Text Walkthrough</button>
-<div class="content">
-	<p>In GalaxyTrakr, clicking on the <q>Workflow</q> button in the site's top navigation window will take you to your saved workflows. In order to save a workflow to this easy-to-access location:
-	<il>
-		<li>Click the <q>Shared Data</q> button in the top navigation menu, and select <q>Workflows.</q> This will take you to the list of all published workflows that have been imported and shared publicly on GalaxyTrakr.
-			You will be able to see workflows' names, owners, annotations, community tags and ratings, and date of last update.</li>
-		<li>Search for either a particular workflow name, if you know the workflow you would like to access, or other attributes of workflows described in the previous item that may help you narrow down your search.</li>
-		<li>Once you have found a workflow you would like to use, click on the dropdown menu next to its name. To run it once, select <q>Run.</q> To save the workflow to your saved workflows, click <q>Import.</q> To download
-			the workflow as a .ga file, select <q>Save as file.</q></li>
-		<li>Click on the <q>Workflow menu item in the GalaxyTrakr navigation header to ensure the workflow has been saved to this list. You can click the arrow that looks like a <q>Play</q> button to run the workflow from 
-			this list.</li>
-	</il>
 
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+	
+<!-- This section is the side menu bar. Do not edit it unless adding or changing a link to another page on the website. -->
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+<!-- End sidebar menu code. -->
 
-</body>
-</html> 
+<main class="content">
+
+	<h2><center>GalaxyTrakr Basics: Workflow Import<center></h2>
+
+	<section id="description">
+		<p>GalaxyTrakr workflows are collections of tools that have been chained together to run successively starting first with your input dataset and then using either that dataset or the outputs of other datasets in
+			the workflow. They can be created and shared by any GalaxyTrakr user. This tutorial walks through how to access and save those workflows for later use.</p>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>In GalaxyTrakr, clicking on the <b>Workflow</b> button in the site's top navigation window will take you to your saved workflows. In order to save a workflow to this easy-to-access location:
+			<ul>
+				<li>Click the <b>Shared Data</b> button in the top navigation menu and select <b>Workflows.</b> This will take you to the list of all published workflows that have been imported and shared publicly on 
+					GalaxyTrakr. You will be able to see workflows' names, owners, annotations, community tags and ratings, and date of last update.</li>
+				<li>Search for either a particular workflow name, if you know the workflow you would like to access, or other attributes of workflows described in the previous item that may help you narrow down your search.</li>
+				<li>Once you have found a workflow you would like to use, click on the dropdown menu next to its name. To run it once, select <b>Run.</b> To save the workflow to your saved workflows, click <b>Import.</b> To 
+					download the workflow as a .ga file, select <q>Save as file.</q></li>
+				<li>Click on the <b>Workflow</b> menu item in the GalaxyTrakr navigation header to ensure the workflow has been saved to this list. You can click the arrow that looks like a <q>Play</q> button to run the 
+					workflow from this list.</li>
+			</ul>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.</p>
+		</div>
+	</section>
+	
+</main>
+</div>
+ </body>
+ </html>

@@ -1,50 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>GalaxyTrakr Basics: Creating a Collection of Fastq Pairs</title>
-<link rel="stylesheet" type="text/css" href="tutorial_stylesheet.css">
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | GalaxyTrakr Basics: Creating a List of Pairs/Collection</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
+
 <body>
-<h1><center>GalaxyTrakr Basics: Creating a Collection of Fastq Pairs</center></h1> 
-<div class="sidenav">
-  <p>GalaxyTrakr Basics</p>
-  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
-  <a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a>
-  <a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a>
-  <br>
-  <p>Tool Tutorials</p>
-  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
-  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/MLST">MLST</a>
-  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
-  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
-  <br>
-  <a href="https://microseqtrain.github.io/index">About Us</a>
-</div>
-<p><center>This tutorial will show you how to create a collection of paired forward and reverse fastq files in GalaxyTrakr.</center></p>
-<button class="collapsible">Video Tutorial</button>
-<div class="content">
-	<p><i>Coming soon!</i></p>
-</div>
-<button class="collapsible">Text Walkthrough</button>
-<div class="content">
-	<p>This tutorial assumes that you have already imported fastq foward and reverse reads into a GalaxyTrakr history. If you need assistance with that task, please see <a href="https://microseqtrain.github.io/fastq_import">
-		this</a> tutorial.</p>
-		<ol>
-	<li>With the history containing your unpaired fastq files active, navigate to the GalaxyTrakr main page and look for the checkmark button beneath your history's name. Click it, and check the resulting boxes to the left of
-		the fastq files you would like to pair.</li>
-	<li>Click <q>For all selected...</q> button and select <q>Build List of Dataset Pairs.</q></li>
-	<li>In the resulting pane, you will see two dropdown boxes containing suffixes that your fastq files may have to indicate whether they are the forward or reverse file. Select the appropriate suffix from the dropdown. you
-		You should see the fastq files you selected to pair autopopulate in the pane with GalaxyTrakr matching the files into pairs based on their names.</li>
-	<li>If the pairs of files you see are correct and no files are listed that you do not want to be paired, click <q>Auto-pair.</q> This will result in the pairs of files and the name that will be given to the subsequent pair
-		in the box beneath where the original list of files was. If you see that any files in that list have not moved down to be paired, check for naming errors or missing files.</li>
-	<p>Before you accept these pairings, we would suggest deselecting the checkbox that reads <q>Hide original elements?</q> so that you can better track the origin of the pairs in your history or copy them individually to
-		other histories, if you wish.</p>
-	<li>Give your collection of pairs a name. </li>
-	<li>Click the <q>Create collection</q> button.</li>
-	</ol>
 
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+	
+<!-- This section is the side menu bar. Do not edit it unless adding or changing a link to another page on the website. -->
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+<!-- End sidebar menu code. -->
 
-</body>
-</html> 
+<main class="content">
+
+	<h2><center>GalaxyTrakr Basics: Creating a List of Pairs/Collection</center></h2>
+
+	<section id="description">
+		<p>Tools in GalaxyTrakr can often accept lists of paired forward and reverse fastq files in order to save time and confusion that other input methods for these files would cause. You can create such a list/collection
+			by using the instructions below.</p>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>This tutorial assumes that you have already imported fastq foward and reverse reads into a GalaxyTrakr history. If you need assistance with that task, please see <a href="https://microseqtrain.github.io/fastq_import">
+				this</a> tutorial.</p>
+			<p>With the history containing your unpaired fastq files active, navigate to the GalaxyTrakr main page and look for the checkmark button beneath your history's name. Click it, and check the resulting boxes to the left of
+				the fastq files you would like to pair.</p>
+			<p>Click <b>For all selected...</b> button and select <b>Build List of Dataset Pairs.</b></p>
+			<p>In the resulting pane, you will see two dropdown boxes containing suffixes that your fastq files may have to indicate whether they are the forward or reverse file. Select the appropriate suffix from the dropdown. 
+				You should see the fastq files you selected to pair autopopulate in the pane with GalaxyTrakr matching the files into pairs based on their names.</p>
+			<p>If the pairs of files you see are correct and no files are listed that you do not want to be paired, click <b>Auto-pair.</b> This will result in the pairs of files and the name that will be given to the subsequent
+				pair in the box beneath where the original list of files was. If you see that any files in that list have not moved down to be paired, check for naming errors or missing files.</p>
+			<p>Before you accept these pairings, we would suggest deselecting the checkbox that reads <b>Hide original elements?</b> so that you can better track the origin of the pairs in your history or copy them individually 
+				to other histories, if you wish.</p>
+			<p>Give your collection of pairs a name, and click the <b>Create collection</b> button.</p>
+			<p>You will see the collection in the history. In order to exit this selection mode, click on the checkmark button under the history's name again.</p>
+			<p>You will now be able to use this collection in tools. It will often autopopulate in the tool if you have selected the list or collection option for input.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.</p>
+		</div>
+	</section>
+	
+</main>
+</div>
+ </body>
+ </html>

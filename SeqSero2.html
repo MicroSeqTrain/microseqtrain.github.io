@@ -1,51 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>SeqSero2</title>
-<link rel="stylesheet" type="text/css" href="tutorial_stylesheet.css">
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | SeqSero2 Tutorial</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
+
 <body>
-<h1><center>SeqSero2</center></h1>
-<div class="sidenav">
-  <p>GalaxyTrakr Basics</p>
-  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
-  <a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a>
-  <a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a>
-  <br>
-  <p>Tool Tutorials</p>
-  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
-  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/MLST">MLST</a>
-  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
-  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
-  <br>
-  <a href="https://microseqtrain.github.io/index">About Us</a>
-</div> 
-<p><center>SeqSero2 is a tool used to predict the serotype of <i>Salmonella</i> isolates.</center></p>
-<button class="collapsible">Video Tutorial</button>
-<div class="content"> 
-	<p><i>Coming soon!</i></p>
-</div>
-<button class="collapsible">Text Walkthrough</button>
-<div class="content">
-	<p>You may begin with a paired collection of forward and reverse FASTQ files, two datasets containing forward and reverse FASTQ files, or FASTA files. For assistance with uploading data, please see the GalaxyTrakr Basics 
-	tutorials.</p>
-	<p>Once you have your data in your history, search for <q>SeqSero2</q> in the <q>search tools</q> bar and select the <q>SeqSero2</q> tool.</p>
-	<p>Select your chosen dataset type from the dropdown of the tool. If you have a dataset of the type selected, it will autopopulate in the next dropdown. If this is not the input you would like to use, use the dropdown to 
-	select the correct dataset.</p>
-	<p>For <q>Analysis mode,</q> allele mode was what was used to evaluate SeqSero2 by the GenomeTrakr team. Please contact us if you would like to discuss whether k-mer mode would be better for you.</p>
-	<p>Leave the dropdown for Algorithms for BWA mapping at the default, which is mem. This is the only algorithm for which SeqSero2 is currently optimized.</p>
-	<p>Once you are happy with the inputs, click <q>Execute</q> to run the tool.</p>
-	<p>SeqSero2 will create an output containing a table for each sequence uploaded detailing the O and H antigens coded for, the predicted identification of the Salmonella species, the predicted antigenic profile, the predicted
-	serotype, potential inter-serotype contamination, if any, and any notes about the sequence, including whether the sequence uploaded does not align with Salmonella genomes.</p>
 
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+	
+<!-- This section is the side menu bar. Do not edit it unless adding or changing a link to another page on the website. -->
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+<!-- End sidebar menu code. -->
 
-</div>
-<button class="collapsible">References</button>
-<div class="content">
-	<p>Documentation for SeqSero2 can be found <a href="https://github.com/CFSAN-Biostatistics/SeqSero2-galaxy">here</a> on the developer's GitHub page.</p>
-</div>
+<main class="content">
 
-</body>
-</html> 
+	<h2><center>SeqSero2</center></h2>
+
+	<section id="description">
+		<p>SeqSero2 is a tool used to predict the serotype of <i>Salmonella</i> isolates.</p>
+		<p><b>Inputs:</b> fastq or fasta sequencing files. It is advised that you check the quality of your sequences using a tool like <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a> prior to using this tool.</p>
+		<p><b>Outputs:</b> SeqSero2 will create an output containing a table for each sequence uploaded detailing the O and H antigens coded for, the predicted identification of the Salmonella species, the predicted antigenic 
+			profile, the predicted serotype, potential inter-serotype contamination, if any, and any notes about the sequence, including whether the sequence uploaded does not align with Salmonella genomes.</p>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>This tutorial assumes that you have already imported sequencing files into a GalaxyTrakr history. If you need assistance with that task, please see <a href="https://microseqtrain.github.io/fastq_import">
+				this</a> tutorial. It is advised that you check the quality of your sequences using a tool like <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a> prior to using this tool</p>
+			<p>Once you have your data in your history, search for <q>SeqSero2</q> in the <b>search tools</b> bar and select the <b>SeqSero2</b> tool.</p>
+			<p>Select your chosen dataset type from the dropdown of the tool. If you have a dataset of the type selected, it will autopopulate in the next dropdown. If this is not the input you would like to use, use the dropdown to 
+				select the correct dataset.</p>
+			<p>For <b>Analysis mode,</b> allele mode was what was used to evaluate SeqSero2 by the GenomeTrakr team. Please contact us if you would like to discuss whether k-mer mode would be better for you.</p>
+			<p>Leave the dropdown for Algorithms for BWA mapping at the default, which is mem. <mark>This is the only algorithm for which SeqSero2 is currently optimized.</mark></p>
+			<p>Once you are happy with the inputs, click <b>Execute</b> to run the tool.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">References</label>
+		<div class="collapsible-content" id="references">
+			<p>Documentation for SeqSero2 can be found:</p>
+			<ul>
+				<li><a href="https://github.com/CFSAN-Biostatistics/SeqSero2-galaxy">here</a> on the GalaxyTrakr's GitHub page.</li>
+				<li> Zhang S, Y. Y., Jones MB, Zhang Z, Deatherage Kaiser BL, Dinsmore BA, Fitzgerald C, Fields PI, Deng X. (2015). <i>Salmonella serotype determination utilizing high-throughput genome sequencing data. 
+				J Clin Microbiol.</i> ASM. Retrieved from <a href="http://http://jcm.asm.org/content/early/2015/03/05/JCM.00323-15">http://http://jcm.asm.org/content/early/2015/03/05/JCM.00323-15</a></li>
+			</ul>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse4" />
+		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<div class="collapsible-content" id="example-downloads">
+			<p>Download<a href="salmonella_seq_examples.txt" download="download">this</a> txt file for the SRRs of the <i>Salmonella</i> sequences used in the video tutorial and 
+				use Faster Download and Extract FASTQ tool's <q>List of SRA accession, one per line</q> option under <b>select input type</b> to import the sequences from NCBI.
+				You can then run SeqSero2 on the files, yielding the outputs in <a href="SeqSero2_example_results.zip" download="download">this</a> zip file.</p>
+		</div>
+	</section>
+</main>
+</div>
+ </body>
+ </html>

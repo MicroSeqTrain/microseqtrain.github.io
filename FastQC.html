@@ -1,77 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Skesa</title>
-<link rel="stylesheet" type="text/css" href="tutorial_stylesheet.css">
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | FastQC Tutorial</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
+
 <body>
-<h1><center>FastQC</center></h1> 
-<div class="sidenav">
-  <p>GalaxyTrakr Basics</p>
-  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
-  <a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a>
-  <a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a>
-  <br>
-  <p>Tool Tutorials</p>
-  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
-  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/MLST">MLST</a>
-  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
-  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
-  <br>
-  <a href="https://microseqtrain.github.io/index">About Us</a>
-</div>
-<p><center>FastQC is a GalaxyTrakr tool that will take fastq, bam, or sam input and output data on the quality of that read.</center></p>
-<button class="collapsible">Video Tutorial</button>
-<div class="content"> 
-	<p><i>Coming soon!</i></p>
-</div>
-<button class="collapsible">Text Walkthrough</button>
-<div class="content">
-	<p>For the purposes of this tutorial, it is assumed that the user has previously created a history, uploaded fastq or fasta files, and created a paired list of them in GalaxyTrakr. If you have not already done so and would 
-	like to learn more about those steps, please visit <a href="https://microseqtrain.github.io/fastq_import">this</a> tutorial for fastq import 
-	and <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial for creating a collection of fastq pairs.</p>
-	<ol>
-	<li>While in the history where you  have placed your fastq files, search for <q>FastQC</q> in the Tools search bar in the left pane of the GalaxyTrakr main page. Select the matching tool.</p>
-	<p>GalaxyTrakr will attempt to autopopulate the list of files to run the tool on from the current history. Use the icons for single or multiple fastq files and the dropdowns to select your data sources. </p>
-	<p>For the purposes of foodborne illness surveillance, tuning the default options of the tool is not generally advisable. If you have questions about uses of contaminant lists or other options on the FastQC tool page,
-		please contact <a href="mailto:microseqtrain@fda.hhs.gov">us</a>.</li>
-	<li>If you would like an email notification when the tool completes working, toggle the <q>Email notification</q> switch.</li>
-	<li>Click <q>Execute</q> when you are satisfied with your choices to trigger the tool.</li>
-	<li>The outputs of the tool can be viewed at two levels:
+
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+	
+<!-- This section is the side menu bar. Do not edit it unless adding or changing a link to another page on the website. -->
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
 		<ul>
-			<li>At the <b>raw data</b> level, the quality of each individual forward and reverse read in the browser (by clicking on the eye next to each read's name) or by downloading, by clicking on the name of
-		the read and then clicking on the <q>floppy disk</q> button that appears. This file will be in txt format.</li>
-			<li>Alternatively, a <b>webpage report containing visualizations</b> of the raw data can be found by clicking on <q>#:FastQC on stepname: Web page</q> and navagativing to the level of each individual read, clicking on
-			the read name, and clicking on the <q>eye</q> icon beside it. That web page will include the following:
-				<ul>
-					<li>Basic Statistics</li>
-					<li>Per base sequence quality</li>
-					<li>Per sequence quality scores</li>
-					<li>Per base sequence content</li>
-					<li>Per base GC content</li>
-					<li>Per sequence GC content</li>
-					<li>Per base N content</li>
-					<li>Sequence Length Distribution</li>
-					<li>Sequence Duplication Levels</li>
-					<li>Overrepresented sequences</li>
-					<li>Kmer Content</li>
-				</ul>
-			</li>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
 		</ul>
-		</li>
-		</ol>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+<!-- End sidebar menu code. -->
 
-</div>
-<button class="collapsible">Citations & References</button>
-<div class="content">
-	<p>Documentation for MLST can be found at these locations:</p>
-	<ul>
-		<li><a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"> Andrews, S. (n.d.). FastQC A Quality Control tool for High Throughput Sequence Data</a></li>
-		<li><a href="https://bio.tools/fastqc">bio.tools</a></li>
-		<li><a href="https://openebench.bsc.es/tool/fastqc">OpenEBench</a></li>
-</div>
+<main class="content">
 
-</body>
-</html> 
+	<h2><center>FastQC</center></h2>
+
+	<section id="description">
+		<p>FastQC is a GalaxyTrakr tool that will take sequencing file input and output data on the quality of that read.</p>
+		<p><b>Inputs:</b>fastq, bam, or sam sequencing files</p>
+		<p><b>Outputs:</b>One collection each for text and html files containing quality data for each sequence processed. If the inputs were paired-end reads, each forward and reverse file will have a separate quality report.</p>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>For the purposes of this tutorial, it is assumed that the user has previously created a history, uploaded fastq or fasta files, and created a paired list of them in GalaxyTrakr. If you have not already done so and would 
+				like to learn more about those steps, please visit <a href="https://microseqtrain.github.io/fastq_import">this</a> tutorial for fastq import 
+				and <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial for creating a collection of fastq pairs.</p>
+			<p>While in the history where you  have placed your sequencing files, search for <q>FastQC</q> in the Tools search bar in the left pane of the GalaxyTrakr main page. Select the matching tool.</p>
+			<p>GalaxyTrakr will attempt to autopopulate the list of files to run the tool on from the current history. You have the option of running FastQC on an individual sequencing file (select single dog-eared
+				sheet symbol), multiple sequencing files that have not previously been a collection (select the icon with multiple sheets), and a collection of sequencing files (for instructions on
+				how to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets option is used, each sequence to be filtered must be selected as if
+				selecting multiple files in Windows (hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> key and highlight the last item in
+				a group to be selected).</p>
+			<p>For the purposes of foodborne illness surveillance, tuning the default options of the tool is not generally advisable. If you have questions about uses of contaminant lists or other options on the FastQC tool page,
+				please contact <a href="mailto:microseqtrain@fda.hhs.gov">us</a>.</li>
+			<p>If you would like an email notification when the tool completes working, toggle the <b>Email notification</b> switch.</p>
+			<p>Click <b>Execute</b> when you are satisfied with your choices to trigger the tool.</p>
+			
+			<p>The outputs of the tool can be viewed at two levels:</p>
+			<ul>
+				<li>At the <b>raw data</b> level, the quality of each individual forward and reverse read in the browser (by clicking on the eye next to each read's name) or by downloading, by clicking on the name of
+					the read and then clicking on the <q>floppy disk</q> button that appears. This file will be in txt format.</li>
+				<li>Alternatively, a <b>webpage report containing visualizations</b> of the raw data can be found by clicking on <q>#:FastQC on stepname: Web page</q> and navagating to the level of each individual read, clicking on
+					the read name, and clicking on the <q>eye</q> icon beside it. That web page will include the following:
+					<ul>
+						<li>Basic Statistics</li>
+						<li>Per base sequence quality</li>
+						<li>Per sequence quality scores</li>
+						<li>Per base sequence content</li>
+						<li>Per base GC content</li>
+						<li>Per sequence GC content</li>
+						<li>Per base N content</li>
+						<li>Sequence Length Distribution</li>
+						<li>Sequence Duplication Levels</li>
+						<li>Overrepresented sequences</li>
+						<li>Kmer Content</li>
+					</ul>
+				</li>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">References</label>
+		<div class="collapsible-content" id="references">
+			<p>Documentation for MLST can be found at these locations:</p>
+				<ul>
+					<li><a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"> Andrews, S. (n.d.). FastQC A Quality Control tool for High Throughput Sequence Data</a></li>
+					<li><a href="https://bio.tools/fastqc">bio.tools</a></li>
+					<li><a href="https://openebench.bsc.es/tool/fastqc">OpenEBench</a></li>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse4" />
+		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<div class="collapsible-content" id="example-downloads">
+			<p><a href="galaxytrakr_tutorial_10_miseq.txt" download="download">txt file</a> containing the list of SRR accessions for the 10 sequences from the GenomeTrakr Validation 
+				Strain Set used in the video tutorial.</p>
+			<p>See <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a> on importing sequencing files from NCBI, particularly the section on using a txt file to do so, 
+				if you need assistance with how to use this file.</p>
+		</div>
+	</section>
+</main>
+</div>
+ </body>
+ </html>

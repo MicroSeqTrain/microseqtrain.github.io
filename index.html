@@ -1,45 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>MicroSeqTrain</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="tutorial_stylesheet.css">
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | NanoPlot Tutorial</title>
+<link rel="stylesheet" href="index_stylesheet.css"/>
 </head>
+
 <body>
 
-<div class="sidenav">
-  <p>GalaxyTrakr Basics</p>
-  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
-  <a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a>
-  <a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a>
-  <br>
-  <p>Tool Tutorials</p>
-  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
-  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/MLST">MLST</a>
-  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
-  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
-  <br>
-  <a href="https://microseqtrain.github.io/index">About Us</a>
-</div>
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
 
-<div class="content">
-  <h1><center>Welcome to MicroSeqTrain!</center></h1>
-  <br>
-  <p><center></center></p>
-  <p><h2>News</h2><p>
-  <br>
-  <br>
-  <p><h2>Roadmap</h2><p>
-  <ul>
-		<li>More longread sequencing analysis tools included by mid-December 2024</li>
-		<li>Video tutorials embedded alongside written tutorials by end of year 2024</li>
-		<li>Wet lab tutorials and videos coming by mid-2025</li>
-	</ul>
+
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
 		
-</div>
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+	
+<main class="content">
 
-</body>
-</html>
+	<h2><center>Welcome to MicroSeqTrain!</center></h2>
+
+	<section id="description">
+		<p><center>Our goal is to assist those new to bioinformatics and GalaxyTrakr with using the wealth of tools available there. We include text and video tutorials and example
+			input and output data for tasks ranging from the basics of using the GalaxyTrakr interface to quality assessment of long read and short read sequences to tools that
+			will allow you to get more information out of your sequences.</center></p>
+			
+		<br>
+		
+		<p><center>If you have any questions or ideas for us to further develop this website, please don't hesitate to <a href="mailto:microseqtrain@fda.hhs.gov">email us</a>.</center></p>
+		
+	</section>
+	
+<br>
+
+
+<img src="GalaxyTrakr_flow_chart.jpeg" alt="Flow chart containing suggested means of cleaning, performing quality control on, and analyzing short and long read sequences." 
+	style="width:600px;height:825px;">
+
+	 
+<br>
+	
+	<section class="news-section">
+		<label for="news1" class="news-label">News!</label>
+		<div class="news-content" id="news">
+			<ul>
+				<li>GalaxyTrakr is getting an interface refresh! Be on the lookout for a tutorial showing how to use the more streamlined interface soon.</li>
+				<li>Tools and workflows to be added to this site include workflows for the analysis of Oxford Nanopore Technologies longread sequences.</li>
+				<li>Tutorials relating to the submission of sequences to NCBI and the use of the One Health Enteric package will be added in the near future.</li>
+			</ul>
+		</div>		
+	</section>
+</main>
+</div>
+ </body>
+ </html>

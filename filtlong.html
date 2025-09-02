@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | filtlong Tutorial</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
+</head>
+
+<body>
+
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+	
+<main class="content">
+
+	<h2><center>filtlong</center></h2>
+
+	<section id="description">
+		<p>filtlong is a GalaxyTrakr tool for use on long read sequences that takes the original sequence and reduces it to a smaller subset of reads with better quality. For the
+			purposes of filtlong, <q>better quality</q> means the reads that are longest and have a higher identity with reference sequences pass the filter. These filtered 
+			sequences can then be used in tools that require good quality sequences to run, such as NanoPlot.</p>
+		<p><b>Inputs:</b> raw fastq files from a long read sequencing method</p>
+		<p><b>Outputs:</b> one filtered fastqsanger file for each fastq file input</p>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>This tutorial assumes that you have already imported fastq file(s) from a long read sequencer into a GalaxyTrakr history. If you need assistance with that task, please see <a href="https://microseqtrain.github.io/fastq_import">
+				this</a> tutorial.</p>
+			<p>Search for and click on <q>filtlong</q> in the tool search bar of GalaxyTrakr.</p>
+			<p>You will see that your inputs may not be in a file format other than fastq. You have the option of running filtlong on an individual fastq file (select single dog-eared
+				sheet symbol), multiple fastq files that have not previously been a collection (select the icon with multiple sheets), and a collection of fastq files (for instructions on how
+				to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets option is used, each sequence to be filtered must be selected as if
+				selecting multiple files in Windows (hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> key and highlight the last item in
+				a group to be selected).</p>
+			<p>You need not change the inputs in the collapsable sections of filtlong's interface in order to run it, but here are some situations in which you might consider it:</p>
+			<ul>
+				<li>You have specific thresholds for the quality of the output sequences, such as minimum length, keep percentage, or minimum window quality. See <b>Output thresholds</b> 
+					section and enter them there. <mark>GenomeTrakr's recommended parameters: set keep percent to 95%, total bases to 50x10^6, and minimum length
+					of read to 1000 bases.</mark></li>
+				<li>You know the identity of the organism sequenced using a long read method and have a high quality Illumina (short read) sequence file to use in the <b>External references</b> 
+					section. For this purpose, a <q>high quality</q> Illumina sequence would be closed (complete coverage) and have high coverage depth. This/these sequence(s) can be in fastq or 
+					fasta format. If a reference sequence is provided, filtlong will use k-mer matches between the sequence(s) in question and the reference to gauge quality. If no reference 
+					sequence is provided, quality will be determined using the Phred quality scores (Q scores) in the input file(s). Using a reference gives you a more accurate gauge of 
+					quality. </li>
+				<li>You would like to privilidge some attributes that go into making a <q>quality</q> sequence over others. You can tweak the ratio of the weights of length score to mean quality to 
+					window quality in the <b>Score weights</b> section.</li>
+				<li>If you have chosen to provide a reference Illumina sequence, you may then use the <b>Read manipulation</b> section to <b>trim</b> reads (remove bases from the start or end 
+					of reads that do not match a k-mer) or <b>split</b> reads into good quality and bad quality child reads. Trim ensures reads start and end with quality sequences. Split 
+					enables you to more aggressively target bad sections of reads while keeping good sections. The number you enter into the Trim input box determines how many consecutive bases
+					may fail to match a k-mer in the reference before the read is split. Thus, a lower number may eliminate larger portions of reads and lower overall average read length
+					while a higher value will conserve more bases in the reads.</li>
+				<li>You may change the <b>sliding window size</b> in the <b>Other</b> section. The default size is 250 bases. It is suggested that you do this only if you have a statistical
+					reason for doing so.</li>
+			</ul>
+			<p>Choose whether you would like to be emailed when filtlong is finished running using the toggle, and click <q>Execute</q> to run the tool.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">References</label>
+		<div class="collapsible-content" id="references">
+			<p>Documentation for filtlong can be found at these sources: 
+			<ul>
+				<li>On the GitHub page of the developer, R. Wick, <a href="https://github.com/rrwick/Filtlong">here</a>. Note that the GitHub contains instructions as if one were using the
+					command line to execute filtlong. Its advise is still helpful for tweaking the instructions given to filtlong in the GalaxyTrakr interface.</li>
+				<li>bio.tools: filtlong <a href="https://bio.tools/filtlong">bio.tools</a> and <a href = "https://openebench.bsc.es/tool/filtlong">OpenEBench</a></li>
+			</ul> 
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse4" />
+		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<div class="collapsible-content" id="example-downloads">
+			<p><a href="ONT_seq_examples.zip" download="download">This</a> zip file contains the ONT sequences used in the video tutorial. In order to import them into 
+				GalaxyTrakr as quickly as possible, it would be best to extract the files from the folder, compress them into zip files individually, and then upload them into
+				GalaxyTrakr as instructed in the <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a> tutorial. After import, begin using this tutorial's
+				instructions.</p>
+		</div>
+	</section>
+	
+</main>
+</div>
+ </body>
+ </html>

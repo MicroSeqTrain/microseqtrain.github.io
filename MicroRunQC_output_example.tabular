@@ -1,0 +1,11 @@
+File	Contigs	Length	EstCov	N50	MedianInsert	MeanLength_R1	MeanLength_R2	MeanQ_R1	MeanQ_R2	Scheme	ST
+SRR28565981.fasta	26	2783482	111.0	325333	345	240.7	240.8	35.7	34.6	saureus	5	clonal_complex=CC5	arcC(1)	aroE(4)	glpF(1)	gmk(4)	pta(12)	tpi(1)	yqiL(10)
+SRR28565983.fasta	41	5030882	116.9	464685	304	234.1	234.5	35.4	33.4	senterica_achtman_2	40		aroC(19)	dnaN(20)	hemD(3)	hisD(20)	purE(5)	sucA(22)	thrA(22)
+SRR28565984.fasta	14	2914816	116.8	1493521	318	235.5	235.7	35.7	34.5	listeria_2	382	CC=CC183,Lineage=I	abcZ(1)	bglA(51)	cat(11)	dapE(13)	dat(2)	ldh(5)	lhkA(5)
+SRR28876245.fasta	51	5153677	56.5	395043	321	236.3	236.3	35.2	34.7	vparahaemolyticus	3	clonal_complex=3	dnaE(3)	gyrB(4)	recA(19)	dtdS(4)	pntA(29)	pyrC(4)	tnaA(22)
+SRR9042854.fasta	537	4296560	86.2	19572	247	223.3	223.7	34.9	33.8	ecoli_achtman_4	148	clonal_complex=ST148 Cplx	adk(1)	fumC(4)	gyrB(1)	icd(5)	mdh(1)	purA(1)	recA(5)
+SRR9042860.fasta	10	2910923	94.7	520933	316	237.9	238.0	35.1	34.1	listeria_2	382	CC=CC183,Lineage=I	abcZ(1)	bglA(51)	cat(11)	dapE(13)	dat(2)	ldh(5)	lhkA(5)
+SRR9042861.fasta	27	4870573	53.4	505176	316	236.2	236.6	34.7	32.7	senterica_achtman_2	909		aroC(81)	dnaN(283)	hemD(101)	hisD(12)	purE(124)	sucA(130)	thrA(17)
+SRR9042864.fasta	23	1721376	226.3	212472	310	236.1	236.1	35.3	34.5	campylobacter	5305	clonal_complex=ST-828 complex	aspA(33)	glnA(39)	gltA(30)	glyA(82)	pgm(113)	tkt(85)	uncA(17)
+SRR9043662.fasta	30	4543145	72.1	525189	320	237.6	238.1	34.7	32.2	cronobacter	1	clonal_complex=1,species=Cronobacter sakazakii	atpD(1)	fusA(1)	glnS(1)	gltB(1)	gyrB(1)	infB(1)	pps(1)
+SRR9043684.fasta	28	4871181	56.8	525664	313	236.1	236.4	34.9	33.0	cfreundii	-	-	aspC(148)	clpX(~205)	fadD(102)	mdh(81)	arcA(20)	dnaG(97)	lysP(208)

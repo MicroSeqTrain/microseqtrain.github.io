@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | Kraken2 Tutorial</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
+</head>
+
+<body>
+
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa - assembly</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC - sequence QC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC - GenomeTrakr QC Workflow</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+	
+<main class="content">
+
+	<h2><center>Kraken2</center></h2>
+
+	<section id="description">
+		<p>Kraken2 is a taxonomic sequence classifier that uses a k-mer based approach to label short DNA reads.</p>
+		<p><b>Inputs:</b> single or paired reads in fasta or fastq format. The paired reads may also be in a collection. It is advised that you run QC tools on your sequence(s) before
+			using Kraken2.</p>
+		<p><b>Outputs:</b></p>
+			<ul>
+				<li>One tabular data file for each sequencing file input containing a single taxonomic label for every read in the sequence. The file(s) can be downloaded and
+					visualized using other tools or converted to other formats or visualized within GalaxyTrakr itself.</li>
+				<li>One report containing aggregate counts/clade. <mark>In order to direct Kraken2 to print this report, you will need to click on the <b>Create Report</b> section at the bottom of the tool's interface and switch the toggle under <b>Print a report with 
+					aggregate counts/clade to file</b> to "Yes."</mark></li>
+			</ul>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>This tutorial assumes that you have already imported sequencing files into a GalaxyTrakr history. If you need assistance with that task, please see <a href="https://microseqtrain.github.io/fastq_import">
+				this</a> tutorial.</p>
+			<p>Search for and click on <q>Kraken2</q> in the tool search bar of GalaxyTrakr.</p>
+			<p>You have the option of running Kraken2 on an individual file (select single dog-eared sheet symbol), multiple files that have not previously been a collection (select the icon with multiple sheets), and a 
+				collection of sequencing files (for instructions on how how to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets 
+				option is used, each sequence to be filtered must be selected as if selecting multiple files in Windows (hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> 
+				key and highlight the last item in a group to be selected).</p>
+			<p>Again, <mark>in order to direct Kraken2 to print this report, you will need to click on the <b>Create Report</b> section at the bottom of the tool's interface and switch the toggle under <b>Print a report with 
+					aggregate counts/clade to file</b> to "Yes."</mark></p>
+			<p>You need not change any other options in the collapsable sections of Kraken2's interface in order to run it, but in order to get the most out of the output, it is advised to <mark>toggle the <b>Print scientific names
+				instead of just taxids</b> option on</mark>.</p>
+			<p>However, you do have the option for increasing the stringency of the
+				confidence, minimum base quality, or minimum hit groups thresholds, running a quicker, less accurate version of the tool, splitting classified and unclassified outputs, or
+				changing aspects of the report. Email us at <a href="mailto:microseqtrain@fda.hhs.gov"></a> if you would like to discuss how these options may be beneficial in your particular 
+				use case.
+			<p>You also have the option to <b>Select a Kraken2 database</b> from the dropdown menu. This is helpful if the database has been updated since you have run Kraken2 on a particular
+				dataset, and you would like to run the previous version again on current data.</p> 
+			<p>Choose whether you would like to be emailed when Kraken2 is finished running using the toggle, and click <q>Execute</q> to run the tool.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">Interpretation of Results</label>
+		<div class="collapsible-content" id=interpretation">
+			<p>Kraken2's standard output, called simply <q>Classification,</q> is a tabular data file for every genome input. This file lists every contig in the genome along with the tool's taxonomic findings for each. Here
+				is the meaning of each column, paraphrased from the Oregon State University manual for Kraken2 (see <b>References</b>):
+				<ul>
+					<li>Whether the contig was classified (C) in the selected input database or not (U).</li>
+					<li>The name of the contig.</li>
+					<li>The most specific level of classification that can be confered on that contig, whether that is Domain, Kingdom, Phyllum, etc. or all the way down to a subspecies. If there is a <q>0</q> here, the contig
+						was unclassified.</li>
+					<li>The number of basepairs in the contig (or pair of contigs, in which case the output will look like [forward count|reverse count].</li>
+					<li>The Lowest Common Ancestor mapping for all k-mers in the sequence or sequences, [taxonomy ID number:number of k-mers mapped to that number]. Mappyings are space-delimited, and <q>|:|</q> marks the end 
+						of the forward sequence and the beginning of the reverse.</li>
+				</ul>
+			</p>
+			<p>If, as suggested, you toggled the option to create a report of aggregate counts/clade, you will see that output type called <q>Report</q> in your history. Clicking on it will show your list of input sequences.
+				Click on the <q>eye</q> icon to show the report for a sequence. This report will contain the following columns, paraphrased from the Oregon State University manual for Kraken2 (see <b>References</b>):
+				<ul>
+					<li>Percentage of fragments mapped to the clade in the last column.</li>
+					<li>Number of fragments covered by this clade.</li>
+					<li>Number of fragments assigned specifically to this clade.</li>
+					<li><q>A rank code, indicating (U)nclassified, (R)oot, (D)omain, (K)ingdom, (P)hylum, (C)lass, (O)rder, (F)amily, (G)enus, or (S)pecies. Taxa that are not at any of these 10 ranks have a rank code that is 
+						formed by using the rank code of the closest ancestor rank with a number indicating the distance from that rank. E.g., "G2" is a rank code indicating a taxon is between genus and species and the 
+						grandparent taxon is at the genus rank.</q></li>
+					<li>The NCBI taxonomic ID number for that clade</li>
+					<li>The indented scientific name, if that option has been chosen</li>
+				</ul>
+				If you have not selected the option to display all taxa, <q>report-zero-counts,</q> only taxa with calls will be shown in the report.</p>
+			<p>At first, the percentage column may not appear to make sense because the numbers do not add up to 100%. Remember, however, that Kraken2 is listing the percentage of calls belonging to a certain taxon, beginning
+				with Root and Domain, not the percentage of fragments that can <i>only</i> be resolved to a certain level. This is important to remember when writing programs to further analyze these Kraken2 reports.</p>
+			<p>A zip file containing all of the outputs of a either of these types can be downloaded by first clicking on the hyperlink of the output type followed by clicking on the <q>floppy disk</q> icon at the top right of the
+				subsequent list.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">References</label>
+		<div class="collapsible-content" id="references">
+			<p>Documentation for Kraken2 can be found at these sources: 
+			<ul>
+				<li>Wood, D. E., & Salzberg, S. L. (2014). Kraken: ultrafast metagenomic sequence classification using exact alignments. <i>Genome Biology</i>, 15(3). Retrieved from
+					<a href="http://dx.doi.org/10.1186/gb-2014-15-3-r46">http://dx.doi.org/10.1186/gb-2014-15-3-r46</a></li>
+				<li>bio.tools: kraken2 <a href="https://bio.tools/kraken2">bio.tools</a> and <a href = "https://openebench.bsc.es/tool/kraken2">OpenEBench</a></li>
+				<li>Oregon State Unviersity’s <a href=”https://software.cqls.oregonstate.edu/updates/docs/kraken2/MANUAL.html”>Kraken 2 Manual</a></li>
+			</ul> 
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse4" />
+		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<div class="collapsible-content" id="example-downloads">
+			<p>The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
+			importing these same files from NCBI by downloading this <a href="galaxytrakr_tutorial_10_miseq.txt" download="download">txt file</a> containing the list of SRR 
+			accessions for the 10 sequences, uploading the file into GalaxyTrakr and using it to import the sequencing data from NCBI (see <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a>
+			for assistance), and running <a href="https://microseqtrain.github.io/skesa">Skesa</a> on the resulting collection of sequences.</p>
+			<p>Running Kraken2 on the Skesa results will yield the following outputs:
+				<ul>
+					<li><a href="Kraken2_Classification_ouput_examples.tsv" download="download">Kraken2_Classification_output_examples.tsv</a> is a zip file containing the tabular
+						data files of contig classifications for each of these 10 sequences.</li>
+					<li><a href="Kraken2_CountsPerClade_ouput_examples.tsv" download="download">Kraken2_CountsPerClade_output_examples.tsv</a> is a zip file containing the aggregated 
+						counts/clade reports for each of these 10 sequences.</li>
+				</ul>
+			</p>
+		</div>
+	</section>
+</main>
+</div>
+ </body>
+ </html>

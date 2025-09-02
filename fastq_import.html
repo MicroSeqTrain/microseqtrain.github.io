@@ -1,67 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Skesa</title>
-<link rel="stylesheet" type="text/css" href="tutorial_stylesheet.css">
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | GalaxyTrakr Basics: FASTQ Import</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
+
 <body>
-<h1><center>GalaxyTrakr Basics: FASTQ Import</center></h1> 
-<div class="sidenav">
-  <p>GalaxyTrakr Basics</p>
-  <a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a>
-  <a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a>
-  <a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a>
-  <br>
-  <p>Tool Tutorials</p>
-  <a href="https://microseqtrain.github.io/skesa">Skesa</a>
-  <a href="https://microseqtrain.github.io/FastQC">FastQC</a>
-  <a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a>
-  <a href="https://microseqtrain.github.io/MLST">MLST</a>
-  <a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a>
-  <a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a>
-  <br>
-  <a href="https://microseqtrain.github.io/index">About Us</a>
-</div>
-<p><center>These tutorials will show you two ways of importing genomic data into GalaxyTrakr, from your computer/network or from NCBI.</center></p>
-<button class="collapsible">Video Tutorial</button>
-<div class="content">
-	<p><i>Coming soon!</i></p>
-</div>
-<button class="collapsible">Text Walkthrough: From Network/User's Computer</button>
-<div class="content">
-	<p><i>If you are importing your data from your local network or your own computer, please perfom the following:.</i></p>
-	<ol>
-	<li>After sigining in to GalaxyTrakr, make sure you are in the History where you would like your files uploaded then click on the button that reads <q>Upload Data.</q></li>
-	<li>Click <q>Choose local files</q> and navigate to the folder that contains your files of interest, select those files, and click 
-		<q>Open.</q> The file names will now appear in the pane in GalaxyTrakr, along with their size and options for their import. We would suggest leaving Type as the <q>Auto-detect</q> default. 
-		<p>You do not need to select an organism type under the <q>Genome</q> column unless you are certain that the sequence you are uploading is from a pure sample and you know its ID. If you have selected a file for upload 
-		by mistake, remove it from the upload by clicking on the trashcan icon to the right of it.</p></li>
-	<li>Once you have your settings the way you want them, click <q>Start</q> to begin the upload. The Status bars for the files will begin filling. The pane does not have to remain open for the upload to continue. Click the
-		<q>Close</q> button to return to the GalaxyTrakr main page. The progress of the upload can also be seen in the same <q>Upload</q> data button that was used to initiate the upload. Click that button again if you need
-		to open that pane again. The upload can be paused by doing so and clicking the <q>Pause</q> button.</li>
-	</ol>
-	<p>The files will appear in the History once the upload is complete.</p>
 
-</div>
-<button class="collapsible">Text Walkthrough: From NCBI</button>
-<div class="content">
-	<p><i>If you are importing data from NCBI without using your computer as an intermediary, please follow these steps.</i></p>
-	<ol>
-		<li>After signing in to GalaxyTrakr, make sure you are in teh History where you would like your files uploaded, then search for <q>NCBI</q> in the Tool search bar at the left hand side of the main GalaxyTrakr page. You 
-		are looking for the tool called <q>Faster Download and Extract Reads in FASTQ.</q> Click on it. You have three options for input in this tool:</p>
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+
+<!-- Begin Menu Sidebar code. Only touch this section if you need to add a new link to the menu sidebar or edit an existing one. -->
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
 		<ul>
-			<li><b>SRR accession</b>, where you can input a single SRR that will have its FASTQ files added to the History.</li>
-			<li><b>List of SRA accession, one per line</b>, where you can input list of SRRs that will have their FASTQ files added to the History. Please make sure these are in line-by-line format rather than a comma separated 
-		list.</li>
-			<li><b>SRA archive in current history</b>, where an SRR accession list in a file uploaded to your History will be converted into a list of FASTQ files. Please see the documentation at the bottom of the tool's page
-		in GalaxyTrakr for further details of this method.</li>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
 		</ul>
-				<p>Advanced options in the tool will not apply in most use cases. Please contact us at <a href="mailto:genometrakr@fda.hhs.gov">microseqtrain@fda.hhs.gov</a> if you would like to discuss use of those options.
-				<q>Email notification</q> at the bottom of the page if you would like GalaxyTrakr to email you when the data has been completely extracted from NCBI. 
-			<li>When the options are as you wish, click <q>Execute</q> to begin the
-		extraction from NCBI.</li>
-	<ol>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+<!-- end of Menu Sidebar code -->
+	
+<main class="content">
 
+	<h2><center>GalaxyTrakr Basics: FASTQ Import</center></h2>
 
-</body>
-</html>
+	<section id="description">
+		<p>These tutorials will show you two ways of importing genomic data into GalaxyTrakr, from your computer/network or from NCBI. For the purposes of this tutorial, it is assumed that you have created a History into which
+			your files and subsequent jobs will go. If you need help doing this, please visit <a href="https://microseqtrain.github.io/histories">this</a> tutorial.</p>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Option 1: Importing from your network</label>
+		<div class="collapsible-content" id="option1">
+			<p><i>If you are importing your data from your local network or your own computer, please perfom the following:</i></p>
+			<ol>
+				<li>After sigining in to GalaxyTrakr, make sure you are in the History where you would like your files uploaded then click on the button that reads <q>Upload Data.</q></li>
+				<li>Click <q>Choose local files</q> and navigate to the folder that contains your files of interest, select those files, and click 
+					<q>Open.</q> The file names will now appear in the pane in GalaxyTrakr, along with their size and options for their import. We would suggest leaving Type as the <q>Auto-detect</q> default. 
+					<p>You do not need to select an organism type under the <q>Genome</q> column unless you are certain that the sequence you are uploading is from a pure sample and you know its ID. If you have selected a file for upload 
+					by mistake, remove it from the upload by clicking on the trashcan icon to the right of it.</p></li>
+				<li>Once you have your settings the way you want them, click <q>Start</q> to begin the upload. The Status bars for the files will begin filling. The pane does not have to remain open for the upload to continue. Click the
+					<q>Close</q> button to return to the GalaxyTrakr main page. The progress of the upload can also be seen in the same <q>Upload</q> data button that was used to initiate the upload. Click that button again if you need
+					to open that pane again. The upload can be paused by doing so and clicking the <q>Pause</q> button.</li>
+			</ol>
+			<p>The files will appear in the History once the upload is complete.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">Option 2: Importing from NCBI via Faster Download and Extract FASTQ tool</label>
+		<div class="collapsible-content" id="option1">
+			<p><i>If you are importing data from NCBI without using your computer as an intermediary, one option is to use the Faster Download and Extract Reads in FASTQ tool. It will pull FASTQ files from NCBI and deposit them in your
+		history. The files will be divided into collections depending on whether they are paired- or single-end data, the first and second collections created, or a different type of file, which will be placed in a third 
+		<q>Other data</q> collection. A text file log will also be created containing a simple breakdown of spots and reads read and reads written for each NCBI sequencing run record (SRR) accession.</i></p>
+			<ol>
+				<li>After signing in to GalaxyTrakr, make sure you are in the history where you would like your files uploaded, then search for <q>NCBI</q> in the Tool search bar at the left-hand side of the main GalaxyTrakr page. You 
+		are looking for the tool called <q>Faster Download and Extract Reads in FASTQ in the list of tools typing <q>NCBI</q> gives you.</q> Click on it. You have three options for input in this tool:</p>
+					<ul>
+						<li><b>SRR accession</b>, where you can input a single SRR that will have its FASTQ files added to the History.</li>
+						<li><b>List of SRA accession, one per line</b>, where you can input list of SRRs that will have their FASTQ files added to the History. Please make sure these are in line-by-line format rather than a comma separated 
+							list.</li>
+						<li><b>SRA archive in current history</b>, where an SRR accession list in a file uploaded to your History will be converted into a list of FASTQ files. Please see the documentation at the bottom of the tool's page
+							in GalaxyTrakr for further details of this method.</li>
+					</ul>
+				<li>Advanced options in the tool will not apply in most use cases. Please contact us at <a href="mailto:genometrakr@fda.hhs.gov">microseqtrain@fda.hhs.gov</a> if you would like to discuss use of those options.</li>
+				<li> Toggle on <b>Email notification</b> at the bottom of the page, if you would like GalaxyTrakr to email you when the data has been completely extracted from NCBI.</li>
+				<li>When the options are as you wish, click <q>Execute</q> to begin the extraction from NCBI.</li>
+	</ol>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse4" />
+		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<div class="collapsible-content" id="example-downloads">
+			<p><a href="SRR_import_list_example.txt" download="download">Download an example</a> of a txt file for use with Faster Download and Extract FASTQ tool's <q>List of SRA 
+				accession, one per line</q> option under <b>select input type</b>.</p>
+		</div>
+	</section>
+</main>
+</div>
+ </body>
+ </html>

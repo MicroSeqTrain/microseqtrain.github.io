@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0"/>
+<title>MicroSeqTrain | Flye Tutorial</title>
+<link rel="stylesheet" href="tutorial_stylesheet.css"/>
+</head>
+
+<body>
+
+	<div class="banner">
+		<h1>MicroSeqTrain</h1>
+	</div>
+
+<div class="container">
+	<nav class="sidebar">
+		<p>GalaxyTrakr Basics</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+		</ul>
+		<br>
+		<p>Short Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+			
+		</ul>
+		<br>
+		<p>Long Read Processing</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+		</ul>
+		<br>
+		<p>Analysis Tools</p>
+		<ul>
+			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+		</ul>
+		<br>
+		<a href="https://microseqtrain.github.io/about">About Us</a>
+		
+		<br>
+		
+		<div class="search-container">
+			<input type="text" placeholder="Search..." class="search-bar" />
+		</div>
+	</nav>
+	
+<main class="content">
+
+	<h2><center>Flye</center></h2>
+
+	<section id="description">
+		<p>Flye is a GalaxyTrakr tool for assembling long read sequences, such as the outputs of Oxford Nanopore Technologies or PacBio instruments.</p>
+		<p><b>Inputs:</b> fastq or fasta file(s) from a long read sequencing method. <b>NOTE:</b>Though Flye is designed to run on sequences of mediocre quality, if you have reason to 
+	believe your sequencing data is of questionable quality, it would be wise to run sequences through a filtering tool like filtlong first. See tutorial for filtlong <a href="https://microseqtrain.github.io/filtlong">here</a>.</p>
+		<p><b>Outputs, with those that are most important for most of our audience highlighted:</b></p> <!-- highlighting in html = the <mark> tag -->
+		<ul>
+			<li><mark><i>fasta</i> assembly file(s) that can be used in further analyses, such as Nanoplot.</mark></li>
+			<li><mark><i>tabular</i> data file(s) containing data about the contigs in the sequence, such as their length, their coverage, and whether or not they repeat.</mark></li>
+			<li><i>graph_dot</i> file(s) containing assembly data that can be downloaded and visualized in software, browser, or command line tool versions of Graphviz.</li>
+			<li><i>gfa1</i> file(s) containing assembly data that can be downloaded and visualized in any tool that can handle this file format, such as ABySS, SPAdes, GfaViz, etc.</li>
+		</ul>
+	</section>
+	
+<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse1" />
+		<label for="collapse1" class="collapsible-label">Operation</label>
+		<div class="collapsible-content" id="operation">
+			<p>This tutorial assumes that you have already imported fastq or fasta file(s) from a long read sequencer into a GalaxyTrakr history. If you need assistance with that task, please see 
+				<a href="https://microseqtrain.github.io/fastq_import">this</a> tutorial.</p>
+			<p>Search for and click on <q>Flye</q> in the tool search bar of GalaxyTrakr.</p>
+			<p>You have the option of running Flye on an individual sequencing file (simply click on only one file in the list of files when the multiple sheet icon is selected), multiple sequencing
+				files that have not previously been a collection (select the icon with multiple sheets), and a collection of sequencing files (for instructions on how to make such a collection, 
+				visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets option is used, each sequence to be assembled must be selected as if selecting multiple files in Windows 
+				(hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> key and highlight the last item in a group to be selected).</p>
+			<p>Select a <b>mode</b> depending on which type of instrument your sequences came from.</p>
+			<p>You will next see the <b>Number of polishing iterations</b> prompt. GenomeTrakr colleagues currently recommend <mark>3 polishing iterations.</mark></p>
+			<p>No other changes from the defaults are currently recommended. If you believe your use case would benefit from further changes to the defaults and woud like to discuss with
+				subject matter experts, please email us at <a href="mailto:microseqtrain@fda.hhs.gov">microseqtrain@fda.hhs.gov</a>.
+			<p>Decide whether you would like to <b>Generate a log file</b> and toggle that option accordingly.</p>
+			<p>Choose whether you would like to be emailed when filtlong is finished running using the toggle, and click <q>Execute</q> to run the tool.</p>
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse2" />
+		<label for="collapse2" class="collapsible-label">References</label>
+		<div class="collapsible-content" id="references">
+			<p>Documentation for Flye can be found at these sources: 
+			<ul>
+				<li>On the GalaxyTrakr interface page for Flye itself.</li>
+				<li> Lin, Y., Yuan, J., Kolmogorov, M., Shen, M. W., Chaisson, M., & Pevzner, P. A. (2016). Assembly of long error-prone reads using de Bruijn graphs. <i>Proceedings of the 
+		National Academy of Sciences, 113(52)</i>. Retrieved from <a href="http://dx.doi.org/10.1073/pnas.1604560113">http://dx.doi.org/10.1073/pnas.1604560113</a></li>
+				<li>On the GitHub page of one of the developers, M. Kolmogorov, <a href="https://github.com/fenderglass/Flye">here</a>.</li>
+				<li>bio.tools: filtlong <a href="https://bio.tools/filtlong">bio.tools</a> and <a href = "https://openebench.bsc.es/tool/filtlong">OpenEBench</a></li>
+			</ul> 
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+		<div class="collapsible-content" id="video">
+			<p>This is where the video tutorial will live.
+		</div>
+	</section>
+	
+	<br>
+	
+	<section class="collapsible-section">
+		<input type="checkbox" id="collapse4" />
+		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<div class="collapsible-content" id="example-downloads">
+			<p>This is where the files input and output during the video tutorial will live.
+		</div>
+	</section>
+</main>
+</div>
+ </body>
+ </html>

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport"
 	content="width=device-width, initial-scale=1.0"/>
-<title>MicroSeqTrain | MLST Tutorial </title>
+<title>MicroSeqTrain | AMRFinderPlus_db Tutorial</title>
 <link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
 
@@ -15,7 +15,7 @@
 		<h1>MicroSeqTrain</h1>
 	</div>
 	
-<!-- This section is the side menu bar. Do not edit it unless adding or changing a link to another page on the website. -->
+<!-- Begin Menu Sidebar code. Only touch this section if you need to add a new link to the menu sidebar or edit an existing one. -->
 <div class="container">
 	<nav class="sidebar">
 		<p>GalaxyTrakr Basics</p>
@@ -58,17 +58,16 @@
 			<input type="text" placeholder="Search..." class="search-bar" />
 		</div>
 	</nav>
-<!-- End sidebar menu code. -->
-
+<!-- end of Menu Sidebar code -->
+	
 <main class="content">
 
-	<h2><center>MLST</center></h2>
+	<h2><center>AMRFinderPlus_db</center></h2>
 
 	<section id="description">
-		<p>MLST is a tool that will run input genomes against PubMLST schemes and output the scheme most closely matching the input genome along with the alleles used to select the scheme.</p>
-		<p><b>Inputs:</b> fasta or Genbank sequencing files. If your raw data is in fastq format, it is advised that the data be run through an assembler, such as <a href = "https://microseqtrain.github.io/Skesa">Skesa</a> 
-			to both improve quality and put the data in assembled, fasta format.</p>
-		<p><b>Output: </b> A single tabular data file containing the filenames of your input files, the scheme found to match each input file, and the alleles used to match the scheme to the input.</p>
+		<p>Amrfinderplus_db is a tool for detecting genes for virulence factors and resistance to antibiotics, heat, acid, metal, and biocides in bacterial genomes.</p>
+		<p><b>Inputs:</b> fasta files or proteins or both together, if you have a gff file that will facilitate this.</p>
+		<p><b>Outputs:</b> text file(s) containing</p>
 	</section>
 	
 <br>
@@ -77,15 +76,27 @@
 		<input type="checkbox" id="collapse1" />
 		<label for="collapse1" class="collapsible-label">Operation</label>
 		<div class="collapsible-content" id="operation">
-			<p>For the purposes of this tutorial, it is assumed that the user has previously created a history, uploaded fastq or fasta files, and run an assembler such as <a href = "https://microseqtrain.github.io/Skesa">Skesa</a>. 
-				If you need help with the history and file import would like to learn more about those steps, please visit <a href="https://microseqtrain.github.io/histories">this</a> tutorial for help with histories 
-				and <a href="https://microseqtrain.github.io/fastq_inport">this</a> tutorial for fastq inport.</p>
-			<p>Once you have your assembled data in your history, search for <q>MLST</q> in the <b>search tools</b> bar and select the <b>MLST</b> tool.</p> 
-			<p>Input either the multiple datasets containing your FASTA files or a collection of such files. Note that when the multiple datasets option is used, each sequence to be filtered must be selected as if
+			<p>Once you have your data in your history, search for <q>amrfinderplus_db</q> in the <q>search tools</q> bar and select the <q>amrfinderplus_db</q> tool.</p>
+			<p>For our purposes, most often, the input will be nucleotide FASTA files. You have the option of running AMRFinderPlus on an individual fasta file (select single dog-eared
+				sheet symbol), multiple fasta files that have not previously been a collection (select the icon with multiple sheets), and a collection of fasta files (for instructions on how
+				how to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets option is used, each sequence to be filtered must be selected as if
 				selecting multiple files in Windows (hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> key and highlight the last item in
-				a group to be selected).</p> 
-			<p>If you do not desire to specify advanced parameters, click <b>Execute</b> to run the tool. If you have reason to believe you need to alter the default parameters for your particular use case, feel free to 
-				reach out to us at <a href="mailto:microseqtrain@fda.hhs.gov">microseqtrain@fda.hhs.gov</a> if you have any questions about doing so.</p>
+				a group to be selected).</p>
+			<p>Choose the database you would like to use to detect genes of interest. Generally, you will choose the most recent database. An exception to this may be if you have used
+			an older version of a database previously and would like to remain consistent with versioning.</li>
+			
+			<p>Other options that are available to you for adjusting the tool’s outputs are:</p>
+				<ul>
+					<li>Selecting an organism of interest to filter results</li>
+					<li>Selecting a threshold for alleles needed to determine presence of a gene</li>
+					<li>Minimum acceptable coverage of reference protein</li>
+					<li>Whether or not to add <q>plus</q> genes to the report. Toggle this to the on position if you would like to see resistance or virulence genes other than those for 
+						antibiotics</li>
+					<li>Suppress proteins common to a taxonomy group, if you have selected organism-specific results and would like to eliminate outputs common to the taxonomy group</li>
+					<li>Report all target positions of mutations</li>
+					<li>Only toggle the next step about format of protein identifiers if you have uploaded protein FASTA files as well as nucleotide</li>
+				</ul>
+			<p>Choose whether you would like to be emailed when NanoPlot is finished running using the toggle, and click <q>Execute</q> to run the tool.</p>
 		</div>
 	</section>
 	
@@ -95,11 +106,12 @@
 		<input type="checkbox" id="collapse2" />
 		<label for="collapse2" class="collapsible-label">References</label>
 		<div class="collapsible-content" id="references">
-			<p>Documentation for MLST can be found at these locations:</p>
+			<p>Documentation for Amrfinderplus_db can be found in these resources
 			<ul>
-				<li><a href="https://github.com/tseemann/mlst"> T, S. (2016). MLST: Scan contig files against PubMLST typing schemes.</a></li>
-				<li><a href="https://bio.tools/mlst">bio.tools</a></li>
-				<li><a href="https://openebench.bsc.es/tool/mlst">OpenEBench</a></li>
+				<li><a href="https://github.com/ncbi/amr/wiki">here</a> on the developer's GitHub page.</p></li>
+				<li> Feldgarden, M., Brover, V., Haft, D. H., Prasad, A. B., Slotta, D. J., Tolstoy, I., … Klimke, W. (2019). Using the NCBI AMRFinder Tool to Determine Antimicrobial Resistance Genotype-Phenotype Correlations 
+				Within a Collection of NARMS Isolates. <i>BioRxiv</i>. Retrieved from <a href="http://dx.doi.org/10.1101/550707">"http://dx.doi.org/10.1101/550707</a>.
+
 		</div>
 	</section>
 	
@@ -119,11 +131,11 @@
 		<input type="checkbox" id="collapse4" />
 		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
 		<div class="collapsible-content" id="example-downloads">
-			<p>The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
+			The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
 			importing these same files from NCBI by downloading this <a href="galaxytrakr_tutorial_10_miseq.txt" download="download">txt file</a> containing the list of SRR 
 			accessions for the 10 sequences, uploading the file into GalaxyTrakr and using it to import the sequencing data from NCBI (see <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a>
 			for assistance), and running <a href="https://microseqtrain.github.io/skesa">Skesa</a> on the resulting collection of sequences.</p>
-			<p><a href="MLST_output_example.tsv" download="download">This file</a> contains the output from running MLST on the Skesa results.
+			<p><a href="amrfinderplus_db_output_examples.zip" download="download">This zip file</a> contains the outputs from running AMRfinderplus_db on the Skesa results.
 		</div>
 	</section>
 </main>
