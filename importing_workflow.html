@@ -26,7 +26,7 @@
 <button class="collapsible">Video Tutorial</button>
 <div class="content">
     <div onclick="openVideo()" style="cursor: pointer; display: inline-block; position: relative;">
-        <img src="https://i.ytimg.com/vi/SiXchiYZhCc/hqdefault.jpg" 
+        <img src="https://i.ytimg.com/vi/0S_GeZEC4gI/hqdefault.jpg" 
              alt="Workflow Import Video Walkthrough" 
              width="420" 
              height="315" 
@@ -54,63 +54,34 @@
     </ul>
 </div>
 
-    </section>
-    
-    <br>
-    
-<section class="collapsible-section">
-    <input type="checkbox" id="collapse3" />
-    <label for="collapse3" class="collapsible-label">Video Walkthrough</label>
-    <div class="collapsible-content" id="video">
-        <p>
-            <div onclick="openVideo()" style="cursor: pointer; display: inline-block; position: relative;">
-                <img src="https://i.ytimg.com/vi/pXd-oAItMkQ/hqdefault.jpg" 
-                     alt="Workflow Import Video Walkthrough" 
-                     width="420" 
-                     height="315" 
-                     style="border: 2px solid #ccc; border-radius: 8px;" />
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-                            background: rgba(0,0,0,0.8); border-radius: 50%; width: 80px; height: 80px; 
-                            display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-size: 32px; margin-left: 5px;">▶</span>
-                </div>
-            </div>
-        </p>
-        <p><a href="javascript:openVideo()">Click to watch the video walkthrough</a></p>
-    </div>
-</section>
-
 <script>
 function openVideo() {
     // Firefox-specific handling
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
         // Use location.href for Firefox
-        window.location.href = 'https://youtu.be/0S_GeZEC4gI ';
+        window.location.href = 'https://youtu.be/0S_GeZEC4gI';
     } else {
         // Use window.open for other browsers
         window.open('https://youtu.be/0S_GeZEC4gI', '_blank', 'noopener,noreferrer');
     }
 }
+
+// Function to make collapsible sections work
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 </script>
 
-
-    
-    <br>
-    
-    <section class="collapsible-section">
-        <input type="checkbox" id="collapse4" />
-        <label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
-        <div class="collapsible-content" id="example-downloads">
-            <p>The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
-            importing these same files from NCBI by downloading this <a href="galaxytrakr_tutorial_10_miseq.txt" download="galaxytrakr_tutorial_10_miseq.txt">txt file</a> containing the list of SRR 
-            accessions for the 10 sequences, uploading the file into GalaxyTrakr and using it to import the sequencing data from NCBI (see <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a>
-            for assistance), and running <a href="https://microseqtrain.github.io/skesa">Skesa</a> on the resulting collection of sequences.</p>
-            <p><a href="amrfinderplus_db_output_examples.zip" download="amrfinderplus_db_output_examples.zip">This zip file</a> contains the outputs from running AMRfinderplus_db on the Skesa results.</p>
-        </div>
-    </section>
-</main>
-</div>
- </body>
-
- </html>
-
+</body>
+</html>
