@@ -91,10 +91,9 @@
     <br>
     
     <section class="collapsible-section">
-    <input type="checkbox" id="collapse2" />
-    <label for="collapse2" class="collapsible-label">Video Walkthrough</label>
-    <div class="collapsible-content" id="video">
-        <p>
+        <input type="checkbox" id="collapse2" checked />
+        <label for="collapse2" class="collapsible-label">Video Walkthrough</label>
+        <div class="collapsible-content" id="video">
             <div onclick="openVideo()" style="cursor: pointer; display: inline-block; position: relative;">
                 <img src="https://i.ytimg.com/vi/0S_GeZEC4gI/hqdefault.jpg" 
                      alt="Workflow Import Video Walkthrough" 
@@ -107,19 +106,15 @@
                     <span style="color: white; font-size: 32px; margin-left: 5px;">▶</span>
                 </div>
             </div>
-        </p>
-        <p><a href="javascript:openVideo()">Click to watch the video walkthrough</a></p>
-    </div>
-</section>
+            <p><a href="javascript:openVideo()">Click to watch the video walkthrough</a></p>
+        </div>
+    </section>
 
 <script>
 function openVideo() {
-    // Firefox-specific handling
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-        // Use location.href for Firefox
         window.location.href = 'https://youtu.be/0S_GeZEC4gI';
     } else {
-        // Use window.open for other browsers
         window.open('https://youtu.be/0S_GeZEC4gI', '_blank', 'noopener,noreferrer');
     }
 }
