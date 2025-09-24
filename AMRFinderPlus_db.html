@@ -146,9 +146,17 @@
 
 <script>
 function openVideo() {
-    window.open('https://www.youtube.com/watch?v=pXd-oAItMkQ', '_blank', 'noopener,noreferrer');
+    // Firefox-specific handling
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        // Use location.href for Firefox
+        window.location.href = 'https://www.youtube.com/watch?v=pXd-oAItMkQ';
+    } else {
+        // Use window.open for other browsers
+        window.open('https://www.youtube.com/watch?v=pXd-oAItMkQ', '_blank', 'noopener,noreferrer');
+    }
 }
 </script>
+
 
     
     <br>
@@ -169,6 +177,7 @@ function openVideo() {
  </body>
 
  </html>
+
 
 
 
