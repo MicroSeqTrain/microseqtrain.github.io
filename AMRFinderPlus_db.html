@@ -2,159 +2,158 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport"
-	content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0"/>
 <title>MicroSeqTrain | AMRFinderPlus_db Tutorial</title>
 <link rel="stylesheet" href="tutorial_stylesheet.css"/>
 </head>
 
 <body>
 
-	<div class="banner">
-		<h1>MicroSeqTrain</h1>
-	</div>
-	
+    <div class="banner">
+        <h1>MicroSeqTrain</h1>
+    </div>
+    
 <!-- Begin Menu Sidebar code. Only touch this section if you need to add a new link to the menu sidebar or edit an existing one. -->
 <div class="container">
-	<nav class="sidebar">
-		<p>GalaxyTrakr Basics</p>
-		<ul>
-			<li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
-			<li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
-			<li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
-			<li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
-			<li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
-		</ul>
-		<br>
-		<p>Short Read Processing</p>
-		<ul>
-			<li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
-			<li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
-			<li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
-			
-		</ul>
-		<br>
-		<p>Long Read Processing</p>
-		<ul>
-			<li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
-			<li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
-			<li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
-		</ul>
-		<br>
-		<p>Analysis Tools</p>
-		<ul>
-			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
-			<li><a href="https://microseqtrain.github.io/AMRFinderPlus_db">AMRFinderPlus_db</a></li>
-			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
-			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
-		</ul>
-		<br>
-		<a href="https://microseqtrain.github.io/about">About Us</a>
-		
-		<br>
-		
-		<div class="search-container">
-			<input type="text" placeholder="Search..." class="search-bar" />
-		</div>
-	</nav>
+    <nav class="sidebar">
+        <p>GalaxyTrakr Basics</p>
+        <ul>
+            <li><a href="https://microseqtrain.github.io/histories">Histories</a></li>
+            <li><a href="https://microseqtrain.github.io/fastq_import">FASTQ Import</a></li>
+            <li><a href="https://microseqtrain.github.io/paired_fastq_collection">Paired FASTQ Collection</a></li>
+            <li><a href="https://microseqtrain.github.io/workflow_import">Workflow Import</a></li>
+            <li><a href="https://microseqtrain.github.io/basic_troubleshooting">Basic Troubleshooting</a></li>
+        </ul>
+        <br>
+        <p>Short Read Processing</p>
+        <ul>
+            <li><a href="https://microseqtrain.github.io/skesa">Skesa</a></li>
+            <li><a href="https://microseqtrain.github.io/FastQC">FastQC</a></li>
+            <li><a href="https://microseqtrain.github.io/MicroRunQC">MicroRunQC</a></li>
+            
+        </ul>
+        <br>
+        <p>Long Read Processing</p>
+        <ul>
+            <li><a href="https://microseqtrain.github.io/filtlong">filtlong</a></li>
+            <li><a href="https://microseqtrain.github.io/Flye">Flye</a></li>
+            <li><a href="https://microseqtrain.github.io/NanoPlot">NanoPlot</a></li>
+        </ul>
+        <br>
+        <p>Analysis Tools</p>
+        <ul>
+            <li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
+            <li><a href="https://microseqtrain.github.io/AMRFinderPlus_db">AMRFinderPlus_db</a></li>
+            <li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
+            <li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
+        </ul>
+        <br>
+        <a href="https://microseqtrain.github.io/about">About Us</a>
+        
+        <br>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-bar" />
+        </div>
+    </nav>
 <!-- end of Menu Sidebar code -->
-	
+    
 <main class="content">
 
-	<h2><center>AMRFinderPlus_db</center></h2>
+    <h2><center>AMRFinderPlus_db</center></h2>
 
-	<section id="description">
-		<p>Amrfinderplus_db is a tool for detecting genes for virulence factors and resistance to antibiotics, heat, acid, metal, and biocides in bacterial genomes. The </p>
-		<p><b>Inputs:</b> fasta files or proteins or both together, if you have a gff file that will facilitate this.</p>
-		<p><b>Outputs:</b> text file(s) containing alleles associated with antibiotic resistance (and other resistance genes and virulence factors, if you have enabled
-			the "plus" genes option) and their locations within the input genomes. <mark><b>Note:</b>Genes marked "plus" in the output have not necessarily been validated for phenotype. If you see an AMR gene in your results,
-			particularly if it is marked as a "plus" gene, the bacterium may not not necessarily exhibit the associated antimicrobial phenotype.</mark></p>
-	</section>
-	
+    <section id="description">
+        <p>Amrfinderplus_db is a tool for detecting genes for virulence factors and resistance to antibiotics, heat, acid, metal, and biocides in bacterial genomes. The </p>
+        <p><b>Inputs:</b> fasta files or proteins or both together, if you have a gff file that will facilitate this.</p>
+        <p><b>Outputs:</b> text file(s) containing alleles associated with antibiotic resistance (and other resistance genes and virulence factors, if you have enabled
+            the "plus" genes option) and their locations within the input genomes. <mark><b>Note:</b>Genes marked "plus" in the output have not necessarily been validated for phenotype. If you see an AMR gene in your results,
+            particularly if it is marked as a "plus" gene, the bacterium may not not necessarily exhibit the associated antimicrobial phenotype.</mark></p>
+    </section>
+    
 <br>
-	
-	<section class="collapsible-section">
-		<input type="checkbox" id="collapse1"/>
-		<label for="collapse1" class="collapsible-label">Operation</label>
-		<div class="collapsible-content" id="operation">
-			<p>Once you have your data in your history, search for <q>amrfinderplus_db</q> in the <q>search tools</q> bar and select the <q>amrfinderplus_db</q> tool.</p>
-			<p>For our purposes, most often, the input will be nucleotide FASTA files. You have the option of running AMRFinderPlus on an individual fasta file (select single dog-eared
-				sheet symbol), multiple fasta files that have not previously been a collection (select the icon with multiple sheets), and a collection of fasta files (for instructions on how
-				to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets option is used, each sequence to be filtered must be selected as if
-				selecting multiple files in Windows (hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> key and highlight the last item in
-				a group to be selected).</p>
-			<p>Choose the database you would like to use to detect genes of interest. Generally, you will choose the most recent database. An exception to this may be if you have used
-			an older version of a database previously and would like to remain consistent with versioning. If you have already run the analysis for new data with a different version of the database, it is a good practice to
-				return to your old data and run AMRFinderPlus_db on it again using the new database.</li>
-			
-			<p>Other options that are available to you for adjusting the tool’s outputs are:</p>
-				<ul>
-					<li>Selecting an organism of interest to filter results</li>
-					<li>Selecting a threshold for alleles needed to determine presence of a gene</li>
-					<li>Minimum acceptable coverage of reference protein</li>
-					<li>Whether or not to add <q>plus</q> genes to the report. Toggle this to the on position if you would like to see resistance or virulence genes other than those for 
-						antibiotics</li>
-					<li>Suppress proteins common to a taxonomy group, if you have selected organism-specific results and would like to eliminate outputs common to the taxonomy group</li>
-					<li>Report all target positions of mutations</li>
-					<li>Only toggle the next step about format of protein identifiers if you have uploaded protein FASTA files as well as nucleotide</li>
-				</ul>
-			<p>Choose whether you would like to be emailed when amrfinderplus_db is finished running using the toggle, and click <q>Execute</q> to run the tool.</p>
-		</div>
-	</section>
-	
-	<br>
-	
-	<section class="collapsible-section">
-		<input type="checkbox" id="collapse2" />
-		<label for="collapse2" class="collapsible-label">References</label>
-		<div class="collapsible-content" id="references">
-			<p>Documentation for Amrfinderplus_db can be found in these resources
-			<ul>
-				<li><a href="https://github.com/ncbi/amr/wiki">here</a> on the developer's GitHub page.</li>
-				<li> Feldgarden, M., Brover, V., Haft, D. H., Prasad, A. B., Slotta, D. J., Tolstoy, I., … Klimke, W. (2019). Using the NCBI AMRFinder Tool to Determine Antimicrobial Resistance Genotype-Phenotype Correlations 
-					Within a Collection of NARMS Isolates. <i>BioRxiv</i>. Retrieved from <a href="http://dx.doi.org/10.1101/550707">"http://dx.doi.org/10.1101/550707</a>.</li>			
-				<li>Feldgarden, M., Brover, V., Fedorov, B., Prasad, A., Klimke, W. (2022). Curation of the AMRFinderPlus databases: applications, functionality and impact. <i>Microbial Genomics</i>. Retrieved from
-					<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9455714/">https://pmc.ncbi.nlm.nih.gov/articles/PMC9455714/</a>.</li>
-			</ul>
-		</div>
-	</section>
-	
-	<br>
-	
-	<section class="collapsible-section">
-		<input type="checkbox" id="collapse3" />
-		<label for="collapse3" class="collapsible-label">Video Walkthrough</label>
-		<div class="collapsible-content" id="video">
-			<p><iframe width="420" height="315" 
-				src=" https://youtu.be/pXd-oAItMkQ "> 
-				</iframe>  
-			</p>
-		</div>
-	</section>
-	
-	<br>
-	
-	<section class="collapsible-section">
-		<input type="checkbox" id="collapse4" />
-		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
-		<div class="collapsible-content" id="example-downloads">
-			<p>The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
-			importing these same files from NCBI by downloading this <a href="galaxytrakr_tutorial_10_miseq.txt" download="galaxytrakr_tutorial_10_miseq.txt">txt file</a> containing the list of SRR 
-			accessions for the 10 sequences, uploading the file into GalaxyTrakr and using it to import the sequencing data from NCBI (see <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a>
-			for assistance), and running <a href="https://microseqtrain.github.io/skesa">Skesa</a> on the resulting collection of sequences.</p>
-			<p><a href="amrfinderplus_db_output_examples.zip" download="amrfinderplus_db_output_examples.zip">This zip file</a> contains the outputs from running AMRfinderplus_db on the Skesa results.</p>
-		</div>
-	</section>
+    
+    <section class="collapsible-section">
+        <input type="checkbox" id="collapse1"/>
+        <label for="collapse1" class="collapsible-label">Operation</label>
+        <div class="collapsible-content" id="operation">
+            <p>Once you have your data in your history, search for <q>amrfinderplus_db</q> in the <q>search tools</q> bar and select the <q>amrfinderplus_db</q> tool.</p>
+            <p>For our purposes, most often, the input will be nucleotide FASTA files. You have the option of running AMRFinderPlus on an individual fasta file (select single dog-eared
+                sheet symbol), multiple fasta files that have not previously been a collection (select the icon with multiple sheets), and a collection of fasta files (for instructions on how
+                to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets option is used, each sequence to be filtered must be selected as if
+                selecting multiple files in Windows (hold down the <q>ctrl</q> key and click on items in the list individually or hold down the <q>shift</q> key and highlight the last item in
+                a group to be selected).</p>
+            <p>Choose the database you would like to use to detect genes of interest. Generally, you will choose the most recent database. An exception to this may be if you have used
+            an older version of a database previously and would like to remain consistent with versioning. If you have already run the analysis for new data with a different version of the database, it is a good practice to
+                return to your old data and run AMRFinderPlus_db on it again using the new database.</li>
+            
+            <p>Other options that are available to you for adjusting the tool's outputs are:</p>
+                <ul>
+                    <li>Selecting an organism of interest to filter results</li>
+                    <li>Selecting a threshold for alleles needed to determine presence of a gene</li>
+                    <li>Minimum acceptable coverage of reference protein</li>
+                    <li>Whether or not to add <q>plus</q> genes to the report. Toggle this to the on position if you would like to see resistance or virulence genes other than those for 
+                        antibiotics</li>
+                    <li>Suppress proteins common to a taxonomy group, if you have selected organism-specific results and would like to eliminate outputs common to the taxonomy group</li>
+                    <li>Report all target positions of mutations</li>
+                    <li>Only toggle the next step about format of protein identifiers if you have uploaded protein FASTA files as well as nucleotide</li>
+                </ul>
+            <p>Choose whether you would like to be emailed when amrfinderplus_db is finished running using the toggle, and click <q>Execute</q> to run the tool.</p>
+        </div>
+    </section>
+    
+    <br>
+    
+    <section class="collapsible-section">
+        <input type="checkbox" id="collapse2" />
+        <label for="collapse2" class="collapsible-label">References</label>
+        <div class="collapsible-content" id="references">
+            <p>Documentation for Amrfinderplus_db can be found in these resources
+            <ul>
+                <li><a href="https://github.com/ncbi/amr/wiki">here</a> on the developer's GitHub page.</li>
+                <li> Feldgarden, M., Brover, V., Haft, D. H., Prasad, A. B., Slotta, D. J., Tolstoy, I., … Klimke, W. (2019). Using the NCBI AMRFinder Tool to Determine Antimicrobial Resistance Genotype-Phenotype Correlations 
+                    Within a Collection of NARMS Isolates. <i>BioRxiv</i>. Retrieved from <a href="http://dx.doi.org/10.1101/550707">"http://dx.doi.org/10.1101/550707</a>.</li>            
+                <li>Feldgarden, M., Brover, V., Fedorov, B., Prasad, A., Klimke, W. (2022). Curation of the AMRFinderPlus databases: applications, functionality and impact. <i>Microbial Genomics</i>. Retrieved from
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9455714/">https://pmc.ncbi.nlm.nih.gov/articles/PMC9455714/</a>.</li>
+            </ul>
+        </div>
+    </section>
+    
+    <br>
+    
+    <section class="collapsible-section">
+        <input type="checkbox" id="collapse3" />
+        <label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+        <div class="collapsible-content" id="video">
+            <p>
+                <a href="https://www.youtube.com/watch?v=pXd-oAItMkQ" target="_blank">
+                    <img src="https://img.youtube.com/vi/pXd-oAItMkQ/maxresdefault.jpg" 
+                         alt="AMRFinderPlus_db Video Walkthrough" 
+                         width="420" 
+                         height="315" 
+                         style="cursor: pointer; border: 2px solid #ccc; border-radius: 8px;" />
+                </a>
+            </p>
+            <p><a href="https://www.youtube.com/watch?v=pXd-oAItMkQ" target="_blank">Click to watch the AMRFinderPlus_db video walkthrough</a></p>
+        </div>
+    </section>
+    
+    <br>
+    
+    <section class="collapsible-section">
+        <input type="checkbox" id="collapse4" />
+        <label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+        <div class="collapsible-content" id="example-downloads">
+            <p>The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
+            importing these same files from NCBI by downloading this <a href="galaxytrakr_tutorial_10_miseq.txt" download="galaxytrakr_tutorial_10_miseq.txt">txt file</a> containing the list of SRR 
+            accessions for the 10 sequences, uploading the file into GalaxyTrakr and using it to import the sequencing data from NCBI (see <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a>
+            for assistance), and running <a href="https://microseqtrain.github.io/skesa">Skesa</a> on the resulting collection of sequences.</p>
+            <p><a href="amrfinderplus_db_output_examples.zip" download="amrfinderplus_db_output_examples.zip">This zip file</a> contains the outputs from running AMRfinderplus_db on the Skesa results.</p>
+        </div>
+    </section>
 </main>
 </div>
  </body>
 
  </html>
-
-
-
-
-
-
-
