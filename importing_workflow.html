@@ -22,23 +22,52 @@
   <a href="https://microseqtrain.github.io/index">About Us</a>
 </div>
 <p><center>This tutorial will show you how access and import workflows and save pre-existing workflows into your workflows GalaxyTrakr.</center></p>
+
 <button class="collapsible">Video Tutorial</button>
 <div class="content">
-	<p><i>Coming soon!</i></p>
+    <p>
+        <div onclick="openVideo()" style="cursor: pointer; display: inline-block; position: relative;">
+            <img src="https://i.ytimg.com/vi/SiXchiYZhCc/hqdefault.jpg" 
+                 alt="Workflow Import Video Walkthrough" 
+                 width="420" 
+                 height="315" 
+                 style="border: 2px solid #ccc; border-radius: 8px;" />
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                        background: rgba(0,0,0,0.8); border-radius: 50%; width: 80px; height: 80px; 
+                        display: flex; align-items: center; justify-content: center;">
+                <span style="color: white; font-size: 32px; margin-left: 5px;">▶</span>
+            </div>
+        </div>
+    </p>
+    <p><a href="javascript:openVideo()">Click to watch the video walkthrough</a></p>
 </div>
+
 <button class="collapsible">Text Walkthrough</button>
 <div class="content">
-	<p>In GalaxyTrakr, clicking on the <q>Workflow</q> button in the site's top navigation window will take you to your saved workflows. In order to save a workflow to this easy-to-access location:
-	<il>
-		<li>Click the <q>Shared Data</q> button in the top navigation menu, and select <q>Workflows.</q> This will take you to the list of all published workflows that have been imported and shared publicly on GalaxyTrakr.
-			You will be able to see workflows' names, owners, annotations, community tags and ratings, and date of last update.</li>
-		<li>Search for either a particular workflow name, if you know the workflow you would like to access, or other attributes of workflows described in the previous item that may help you narrow down your search.</li>
-		<li>Once you have found a workflow you would like to use, click on the dropdown menu next to its name. To run it once, select <q>Run.</q> To save the workflow to your saved workflows, click <q>Import.</q> To download
-			the workflow as a .ga file, select <q>Save as file.</q></li>
-		<li>Click on the <q>Workflow menu item in the GalaxyTrakr navigation header to ensure the workflow has been saved to this list. You can click the arrow that looks like a <q>Play</q> button to run the workflow from 
-			this list.</li>
-	</il>
+    <p>In GalaxyTrakr, clicking on the <q>Workflow</q> button in the site's top navigation window will take you to your saved workflows. In order to save a workflow to this easy-to-access location:</p>
+    <ul>
+        <li>Click the <q>Shared Data</q> button in the top navigation menu, and select <q>Workflows.</q> This will take you to the list of all published workflows that have been imported and shared publicly on GalaxyTrakr.
+            You will be able to see workflows' names, owners, annotations, community tags and ratings, and date of last update.</li>
+        <li>Search for either a particular workflow name, if you know the workflow you would like to access, or other attributes of workflows described in the previous item that may help you narrow down your search.</li>
+        <li>Once you have found a workflow you would like to use, click on the dropdown menu next to its name. To run it once, select <q>Run.</q> To save the workflow to your saved workflows, click <q>Import.</q> To download
+            the workflow as a .ga file, select <q>Save as file.</q></li>
+        <li>Click on the <q>Workflow</q> menu item in the GalaxyTrakr navigation header to ensure the workflow has been saved to this list. You can click the arrow that looks like a <q>Play</q> button to run the workflow from 
+            this list.</li>
+    </ul>
+</div>
 
+<script>
+function openVideo() {
+    // Firefox-specific handling
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        // Use location.href for Firefox
+        window.location.href = 'https://youtu.be/0S_GeZEC4gI';
+    } else {
+        // Use window.open for other browsers
+        window.open('https://youtu.be/0S_GeZEC4gI', '_blank', 'noopener,noreferrer');
+    }
+}
+</script>
 
 </body>
-</html> 
+</html>
