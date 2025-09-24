@@ -56,31 +56,29 @@
 
 <script>
 function openVideo() {
-    // Firefox-specific handling
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-        // Use location.href for Firefox
         window.location.href = 'https://youtu.be/0S_GeZEC4gI';
     } else {
-        // Use window.open for other browsers
         window.open('https://youtu.be/0S_GeZEC4gI', '_blank', 'noopener,noreferrer');
     }
 }
 
-// Function to make collapsible sections work
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+// Wait for the page to load before adding event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    var coll = document.getElementsByClassName("collapsible");
+    
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
     }
-  });
-}
+});
 </script>
 
 </body>
