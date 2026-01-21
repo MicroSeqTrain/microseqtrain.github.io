@@ -44,7 +44,7 @@
 		<p>Analysis Tools</p>
 		<ul>
 			<li><a href="https://microseqtrain.github.io/MLST">MLST</a></li>
-			<li><a href="https://microseqtrain.github.io/AMRFinderPlus_db">AMRFinderPlus_db</a></li>
+			<li><a href="https://microseqtrain.github.io/AMRFinderPlus">AMRFinderPlus</a></li>
 			<li><a href="https://microseqtrain.github.io/Kraken2">Kraken2</a></li>
 			<li><a href="https://microseqtrain.github.io/SeqSero2">SeqSero2</a></li>
 		</ul>
@@ -73,6 +73,7 @@
 				<li>One report containing aggregate counts/clade. <mark>In order to direct Kraken2 to print this report, you will need to click on the <b>Create Report</b> section at the bottom of the tool's interface and switch the toggle under <b>Print a report with 
 					aggregate counts/clade to file</b> to "Yes."</mark></li>
 			</ul>
+		<p>Public Workflows incorporating QC tools and Kraken2 are also available for use on collections of raw reads. For guidance on using MicroRunKraken2 and Metagenomics_kraken2krona_html workflows, see the Video Walkthrough below.</p>
 	</section>
 	
 <br>
@@ -82,7 +83,7 @@
 		<label for="collapse1" class="collapsible-label">Operation</label>
 		<div class="collapsible-content" id="operation">
 			<p>This tutorial assumes that you have already imported sequencing files into a GalaxyTrakr history. If you need assistance with that task, please see <a href="https://microseqtrain.github.io/fastq_import">
-				this</a> tutorial.</p>
+				this</a> tutorial. It also assumes you have run MicroRunQC on the imported data. If you need assistance with this task, please see <a href="https://microseqtrain.github.io/MicroRunQC"> this</a> tutorial.</p>
 			<p>Search for and click on <q>Kraken2</q> in the tool search bar of GalaxyTrakr.</p>
 			<p>You have the option of running Kraken2 on an individual file (select single dog-eared sheet symbol), multiple files that have not previously been a collection (select the icon with multiple sheets), and a 
 				collection of sequencing files (for instructions on how how to make such a collection, visit <a href="https://microseqtrain.github.io/paired_fastq_collection">this</a> tutorial. Note that when the multiple datasets 
@@ -143,8 +144,8 @@
 	<br>
 	
 	<section class="collapsible-section">
-		<input type="checkbox" id="collapse2" />
-		<label for="collapse2" class="collapsible-label">References</label>
+		<input type="checkbox" id="collapse3" />
+		<label for="collapse3" class="collapsible-label">References</label>
 		<div class="collapsible-content" id="references">
 			<p>Documentation for Kraken2 can be found at these sources: 
 			<ul>
@@ -159,8 +160,8 @@
 	<br>
 	
 <section class="collapsible-section">
-    <input type="checkbox" id="collapse3" />
-    <label for="collapse3" class="collapsible-label">Video Walkthrough</label>
+    <input type="checkbox" id="collapse4" />
+    <label for="collapse4" class="collapsible-label">Video Walkthrough</label>
     <div class="collapsible-content" id="video">
         <p>
             <div onclick="openVideo()" style="cursor: pointer; display: inline-block; position: relative;">
@@ -196,19 +197,28 @@ function openVideo() {
 	<br>
 	
 	<section class="collapsible-section">
-		<input type="checkbox" id="collapse4" />
-		<label for="collapse4" class="collapsible-label">Walkthrough Example Downloads</label>
+		<input type="checkbox" id="collapse5" />
+		<label for="collapse5" class="collapsible-label">Walkthrough Example Downloads</label>
 		<div class="collapsible-content" id="example-downloads">
 			<p>The video tutorial started with a collection of 10 GenomeTrakr Validation Strain Set sequence pairs that had been run through Skesa. To follow along, begin by
 			importing these same files from NCBI by downloading this <a href="galaxytrakr_tutorial_10_miseq.txt" download="galaxytrakr_tutorial_10_miseq.txt">txt file</a> containing the list of SRR 
 			accessions for the 10 sequences, uploading the file into GalaxyTrakr and using it to import the sequencing data from NCBI (see <a href="https://microseqtrain.github.io/fastq_import">this tutorial</a>
 			for assistance), and running <a href="https://microseqtrain.github.io/skesa">Skesa</a> on the resulting collection of sequences.</p>
-			<p>Running Kraken2 on the Skesa results will yield the following outputs:
+			<p>Running Kraken2 on the Skesa results from MicroRunQC will yield the following outputs:
 				<ul>
-					<li><a href="Kraken2_Classification_ouput_examples.tsv" download="Kraken2_Classification_ouput_examples.tsv">Kraken2_Classification_output_examples.tsv</a> is a zip file containing the tabular
+					<li><a href="Kraken2_Classification_ouput_examples.zip" download="Kraken2_Classification_ouput_examples.zip">Kraken2_Classification_output_examples.zip</a> is a zip file containing the tabular
 						data files of contig classifications for each of these 10 sequences.</li>
-					<li><a href="Kraken2_CountsPerClade_ouput_examples.tsv" download="Kraken2_CountsPerClade_ouput_examples.tsv">Kraken2_CountsPerClade_output_examples.tsv</a> is a zip file containing the aggregated 
+					<li><a href="Kraken2_Report_ouput_examples.zip" download="Kraken2_Report_ouput_examples.zip">Kraken2_Report_output_examples.zip</a> is a zip file containing the aggregated 
 						counts/clade reports for each of these 10 sequences.</li>
+				</ul>
+			</p>
+			<p>Running MicroRunKraken2 will yield <a href="MicroRunKraken2_Report.tabular" download="MicroRunKraken2_Report.tabular">this</a> condensed report.</p>
+			<p>Running Metagenomics_kraken2krona_html2 will yield the following outputs (among others):
+				<ul>
+					<li><a href="metagenomics_kraken2krona_fastp_htmls.zip" download="metagenomics_kraken2krona_fastp_htmls.zip">metagenomics_kraken2krona_fastp_htmls.zip</a> is a zip file containing the HTML
+						data files of fastp QC results for each of the 10 samples.</li>
+					<li><a href="metagenomics_kraken2krona_krona_html.zip" download="metagenomics_kraken2krona_krona_html.zip">metagenomics_kraken2krona_krona_html.zip</a> is a zip file containing the HTML
+						document for the interactive krona pie charts for all 10 samples.</li>
 				</ul>
 			</p>
 		</div>
