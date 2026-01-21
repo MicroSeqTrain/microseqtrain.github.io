@@ -1,0 +1,22 @@
+Sample	Name	TaxaID	Rank	FragRank	FragTotal	PercentageTotal
+SRR28565981	                Staphylococcus	1279	G	17302	663898	 96.60
+SRR28565981	                  Staphylococcus aureus	1280	S	645853	646456	 94.07
+SRR28565983	              Salmonella	590	G	10717	1214204	 85.95
+SRR28565983	                Salmonella enterica	28901	S	943974	1203461	 85.19
+SRR28565984	                Listeria	1637	G	19629	791711	 95.13
+SRR28565984	                  Listeria monocytogenes	1639	S	771554	772053	 92.77
+SRR28876245	              Vibrio	662	G	8724	678551	 98.50
+SRR28876245	                  Vibrio parahaemolyticus	670	S	643538	645626	 93.72
+SRR9042854	              Escherichia	561	G	21222	306436	 34.77
+SRR9042854	                Escherichia coli	562	S	276401	281124	 31.90
+SRR9042860	                Listeria	1637	G	16852	646635	 99.40
+SRR9042860	                  Listeria monocytogenes	1639	S	629142	629748	 96.81
+SRR9042861	              Salmonella	590	G	5217	596636	 95.31
+SRR9042861	                Salmonella enterica	28901	S	523060	591411	 94.47
+SRR9042864	                Campylobacter	194	G	107206	925492	 99.35
+SRR9042864	                  Campylobacter coli	195	S	816637	817779	 87.79
+SRR9043662	              Cronobacter	413496	G	40705	735546	 95.03
+SRR9043662	                Cronobacter sakazakii	28141	S	657917	693360	 89.58
+SRR9043684	              Citrobacter	544	G	13947	617788	 92.51
+SRR9043684	                  Citrobacter braakii	57706	S	160098	160098	 23.97
+SRR9043684	                  Citrobacter freundii complex sp. CFNIH3	2077147	S	140927	140927	 21.10
